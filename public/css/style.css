@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font: 62.5% "segoe ui", helvetica, arial, sans-serif;
+  background-color: #fff;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+.header {
+  background-color: #0078d7;
+  color: #fff;
+  padding: 2rem;
+}
+
+.navigation {
+  margin:1rem;
+}
+
+.navigation li {
+  display: inline-block;
+  margin-right: 1rem;
+}

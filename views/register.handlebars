@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <title>Register for The Kindness Club</title>
+</head>
+ 
+<body>
+    {{#if error}}
+        <div class="alert alert-danger">{{error}}</div>
+    {{/if}} 
+    <form id="register" name="register" method="post" action="/register">
+        <label for="user_name">User Name</label>
+        <input class="text" name="user_name" type="text" />
+        <label for="first_name">Firstname</label>
+        <input name="first_name" type="text" />
+        <label for="last_name">Lastname</label>
+        <input name="last_name" type="text" />
+        <label for="password">Password</label>
+        <input name="password" type="password" />
+        <input class="btn" type="submit" value="Register" />
+    </form>
+</body>
+</html>
