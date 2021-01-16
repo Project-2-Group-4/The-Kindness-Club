@@ -6,19 +6,38 @@
 </head>
  
 <body>
+    <div class="header"> 
+			<ul class="navigation"> 
+				<li><a href="/home">Home</a></li>
+				<li><a href="/register">Register</a></li> 
+				<li><a href="/signin">Login</a></li> 
+				<li><a href="/logout">Logout</a></li> 
+			</ul> 
+		</div>
     {{#if error}}
         <div class="alert alert-danger">{{error}}</div>
     {{/if}} 
+    <h1>Sign Up</h1>
     <form id="register" name="register" method="post" action="/register">
+        <label for="name">Name</label>
+        <input class="text" name="name" type="text"/>
         <label for="user_name">User Name</label>
-        <input class="text" name="user_name" type="text" />
-        <label for="first_name">Firstname</label>
-        <input name="first_name" type="text" />
-        <label for="last_name">Lastname</label>
-        <input name="last_name" type="text" />
+        <input name="user_name" type="text" />
         <label for="password">Password</label>
-        <input name="password" type="password" />
-        <input class="btn" type="submit" value="Register" />
+        <input name="password" type="text" />
+        <label for="confirm_password">Confirm Password</label>
+        <input name="confirm_password" type="password" />
+        <input class="btn" type="submit" value="Register"/>
     </form>
+    
+    <h1>About Us</h1>
+    <p>.......</p>
+    <h4>Our Mission</h4>
+    <p>.......</p>
+    <h4>Our Goal</h4>
+    <p>......</p>
+    <h4>Who we are</h4>
+    <p>......</p>
+
 </body>
 </html>
