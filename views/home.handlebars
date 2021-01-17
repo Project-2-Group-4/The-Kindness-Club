@@ -1,12 +1,30 @@
 <!DOCTYPE html>
 <html>
- 
+
 <head>
-    <title>App | Home</title>
+    <title>The Kindness Club</title>
 </head>
- 
+<div class="header">
+    <ul class="navigation">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/register">Register</a></li>
+        <li><a href="/signin">Login</a></li>
+        <li><a href="/kindness">Kindness</a></li>
+        <li><a href="/rewards">Rewards</a></li>
+        <li><a href="/logout">Logout</a></li>
+    </ul>
+</div>
+
 <body>
-    <h2>Home</h2>
-    <h5>Hurray! you are logged in. This is the Home.</h5>
+    <div class="jumbotron">
+            <h1>Welcome</h1>
+            <br>
+            
+            {{!-- button for login --}}
+            <button type="submit" class="btn btn-success" id="login">Log In</button>
+            {{!-- button for signup --}}
+            <button type="submit" class="btn btn-success" id="signup">Sign Up</button>
+    </div>
 </body>
+
 </html>
