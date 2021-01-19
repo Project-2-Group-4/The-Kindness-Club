@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "password",
+    "password": "password1",
     "database": "sequelize_passport",
     "host": "127.0.0.1",
     "port": 3306,
@@ -10,7 +10,7 @@
   "test": {
     "username": "root",
     "password": "password",
-    "database": "sequelize_passport",
+ 
     "host": "127.0.0.1",
     "port": 3306,
     "dialect": "mysql"

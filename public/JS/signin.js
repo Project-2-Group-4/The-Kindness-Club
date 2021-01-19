@@ -2,7 +2,7 @@
 // line 11 validates that there is both a username and password entered
 // line 19 if we have a username and password we run the login function and clear the form
 
-$(document).ready(function () {
+let submit=document.getElementById("submit").addEventListener("click",function () {
 
   var login = document.getElementsByClassName("mb-3")
   var username = document.getElementById("username")
