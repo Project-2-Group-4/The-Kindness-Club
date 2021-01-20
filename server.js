@@ -15,7 +15,7 @@ app.use(flash());
 app.use(passport.session());
 app.use(express.static(__dirname + '/public'));
 
-//Set the templating engine for views as handlebars
+//Set the templating engine for views as handlebars!
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 

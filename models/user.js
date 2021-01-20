@@ -1,3 +1,4 @@
+
 module.exports = function(sequelize, Sequelize) {
  
     var User = sequelize.define('user', {
@@ -15,10 +16,11 @@ module.exports = function(sequelize, Sequelize) {
             notEmpty: true
         },
         user_name: {
-            type: Sequelize.TEXT
+            type: Sequelize.TEXT,
+            notEmpty: true
         },
-        bio: {
-            type: Sequelize.TEXT
+        points:{
+            type: Sequelize.INTEGER,
         },
         email: {
             type: Sequelize.STRING,
@@ -26,12 +28,17 @@ module.exports = function(sequelize, Sequelize) {
                 isEmail: true
             }
         },
+        badge_id: {
+            type: Sequelize.INTEGER
+            
+        },
         password: {
             type: Sequelize.STRING,
             allowNull: false
         }
 
     });
+   
 
     return User;
 }
