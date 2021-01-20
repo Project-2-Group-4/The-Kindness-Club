@@ -1,0 +1,71 @@
+{{!-- This is the kindness generator home page --}}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>The Kindness Club</title>
+</head>
+
+<nav class="navbar navbar-fluid-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/home">Kindness Club Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/register">Register<a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/signin">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/kindness">Kindness Acts<a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/rewards">User Rewards<a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/logout">Logout<a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="wheelgif"><img src="../public/img/wheel.gif" alt="wheel gif" style="height:25em">
+
+{{!-- add kind act --}}
+      <button class="btn btn-danger btn-lg">
+        <span class="fa fa-plus"></span></button> 
+
+
+<div class="row">
+
+      <div class="col-lg-12">
+
+        <div class="card">
+          <div class="card-header">
+       KindActs Database
+          </div>
+          <div class="card-body" id="kind-acts">
+
+            <!-- Content will go in here -->
+
+          </div>
+        </div>
+      </div>
+  </div>
+
+ <form>
+    <div class="row">
+        <h3 id="task">Task:</h3>
+    </div>
+    <div class="row">
+        <h3 id="worth">Worth:</h3>
+    </div>
+
+</form> 
+
+
+
+</html>

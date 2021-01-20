@@ -1,0 +1,72 @@
+{{!-- This is the rewards page --}}
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <title>RewardsPage</title>
+</head>
+ 
+<body>
+   
+    <nav class="navbar navbar-fluid-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/home">Kindness Club Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/register">Register<a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/signin">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/kindness">Kindness Acts<a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/rewards">User Rewards<a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/logout">Logout<a>
+      </li>
+    </ul>
+  </div>
+</nav>
+ 
+
+        <h1>Rewards</h1>
+<h3>Current Badge Status</h3>
+   <form class="add-Badge">
+      <input type="image" id="badge">
+    </form>
+
+<h3>Current Points Available</h3>
+   <form class="points">
+      <input type="text" name="pointEarned" placeholder="points">
+      <input type="submit" value="+ Add points">
+    </form>
+
+ {{!-- need to add badges --}}
+<div class="card" id="mother">
+  <div class="card-body">
+      <h1>🙏 Mother Theresa Status 🙏</h1>
+  </div>
+</div>
+
+<div class="card" id="princess">
+  <div class="card-body">
+<h1>👸 Princess Diana Status 👸</h1>
+  </div>
+</div>
+
+<div class="card" id="rockstar">
+  <div class="card-body">
+    <h1>🤩 RockStar Status 🤩</h1>
+    
+  </div>
+</div>
+
+
+</body>
+</html>

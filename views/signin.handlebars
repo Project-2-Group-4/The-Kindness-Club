@@ -2,18 +2,51 @@
 <html>
  
 <head>
-    <title>Register for The Kindness Club</title>
+    <title>Login</title>
 </head>
  
 <body>
-    {{#if error}}
-        <div class="alert alert-danger">{{error}}</div>
-    {{/if}}
-    <form id="signin" name="signin" method="post" action="/signin">
-        <label for="user_name">User name:</label>
-        <input class="text" name="user_name" type="text" />
-        <input name="password" type="password" />
-        <input class="btn" type="submit" value="Login" />
-    </form>
+
+{{!-- NEW NAV BAR --}}
+    <nav class="navbar navbar-fluid-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/home">Kindness Club Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/register">Register<a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/signin">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/kindness">Kindness Acts<a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/rewards">User Rewards<a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/logout">Logout<a>
+      </li>
+    </ul>
+  </div>
+</nav>
+{{!-- BOOTSTRAP SIGN-IN FORM WITH href button--}}
+  <h1>LOGIN TO YOUR KINDNESS ACCOUNT</h1>
+  <form>
+  <div class="mb-3">
+  <label for="exampleInputEmail1" class="form-label">User Name</label>
+    <input type="username" class="form-control" id="username" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">login for your daily dose of kindness.</div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" id="password">
+  </div>
+  <button type="submit" id= "submit" class="btn btn-primary" href="/kindness">Submit</button>
+</form>
+  
 </body>
 </html>

@@ -1,21 +1,23 @@
 {
-  "name": "passportjs-authentication-scaffold",
+  "name": "the-kindness-club",
   "version": "1.0.0",
-  "description": "Scaffold for structure of app using authentication via PassportJS",
-  "main": "server.js",
+  "description": "Project 2",
+  "main": "index.js",
+  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/radergan/passportjs-authentication-scaffold.git"
+    "url": "git+https://github.com/Project-2-Group-4/The-Kindness-Club.git"
   },
-  "author": "radergan",
+  "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/radergan/passportjs-authentication-scaffold/issues"
+    "url": "https://github.com/Project-2-Group-4/The-Kindness-Club/issues"
   },
-  "homepage": "https://github.com/radergan/passportjs-authentication-scaffold#readme",
+  "homepage": "https://github.com/Project-2-Group-4/The-Kindness-Club#readme",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.19.0",

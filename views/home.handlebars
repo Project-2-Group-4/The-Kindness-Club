@@ -1,12 +1,53 @@
+<nav class="navbar navbar-fluid-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/home">Kindness Club Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/register">Register<a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/signin">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/kindness">Kindness Acts<a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/rewards">User Rewards<a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/logout">Logout<a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+</div>
+
 <!DOCTYPE html>
 <html>
- 
+
 <head>
-    <title>App | Home</title>
+  <title>The Kindness Club</title>
 </head>
- 
+
 <body>
-    <h2>Home</h2>
-    <h5>Hurray! you are logged in. This is the Home.</h5>
+
+
+  </div>
+  <div class="jumbotron">
+    <h1>Welcome</h1>
+    <h3>Let's make the world a better place one act of kindness at a time!</h3>
+    <br>
+
+    {{!-- button for login --}}
+    <button type="submit" class="btn btn-success" id="login" href="/signin">Log In</button>
+    {{!-- button for signup --}}
+    <button type="submit" class="btn btn-success" id="signup" href="/register">Sign Up</button>
+  </div>
 </body>
+
 </html>
