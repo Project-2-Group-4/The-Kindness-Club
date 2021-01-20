@@ -1,12 +1,8 @@
 
 module.exports = function(sequelize, Sequelize) {
  
-    var Badge = sequelize.define('badge', {
-        id: {
-            autoIncrement: true,
-            primaryKey: true,
-            type: Sequelize.INTEGER
-        },
+    var Badge = sequelize.define('Badge', {
+   
         badge_name: {
             type: Sequelize.STRING,
             notEmpty: true
@@ -22,5 +18,20 @@ module.exports = function(sequelize, Sequelize) {
     });
    
 
-    return Badge;
-}
+  Badge.associate = function(models) {
+
+      Badge.hasOne(models.User, {
+        foreignKey: {
+        allowNull: false
+      }
+    });
+    };
+return Badge;
+      }
+       
+  
+
+  
+
+
+

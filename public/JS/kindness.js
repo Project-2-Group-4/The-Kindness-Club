@@ -1,18 +1,27 @@
+// function for getting kindness act to generate to page
 
-   // BACKUP WHEEL function witout GIF IMAGE
-// (() => {
-//     const wheel = document.querySelector('.wheel');
-//     const startButton = document.querySelector('.button');
-//     let deg = 360;
+ $("#act").on("click", function(event) {
 
-//     startButton.addEventListener('click', () => {
-//         wheel.style.transition = 'all 10s ease-out';
-//         wheel.style.transform = `rotate(${deg}deg)`;
-//     });
-//     wheel.addEventListener('transitionend', () => {
-//         wheel.style.transition = 'none';
-//         const actualDeg = deg % 360;
-//         wheel.style.transform = `rotate(${actualDeg}deg)`;
-//     });
-// })();
+    event.preventDefault();
+ 
 
+    var kindAct = {
+   kindness_Act: $("").val().trim().serializ(),
+   points: $("").val().trim().parseInt().serialize()
+     
+    };
+
+    // Send the Get request for the kindact and points assocaited.
+    $.ajax("", {
+      type: "GET",
+      data: kindAct
+    }).then(
+      function() {
+        console.log("Kindness Act Generated");
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+
+  
+  });
