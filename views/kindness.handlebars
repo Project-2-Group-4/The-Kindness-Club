@@ -15,6 +15,7 @@
 
 
 
+
 <div class="container" style="margin-top: 30px; margin-bottom: 20px; text-align: center; border:2px solid black">
   <form>
     <div class="row-md-8 mt-4">
@@ -35,7 +36,30 @@
   <div class="row-md-8 mt-4">
     <h1>WORTH: 100pts</h1>
   </div>
+=======
+<div class="container" style="margin-top: 30px; margin-bottom: 20px; text-align: center; border:2px solid black">
+  <form>
+    <div class="row-md-8 mt-4">
+      <label><input type="checkbox" id="completed" onclick="checked" style="width:30px;height:30px;"/><h1>TASK: Compliment someone on their mask.
+          {{#each task}}
+          <h1>TASK: {{task}} </h1>
+          {{/each}}
+          </h1></label>
+    </div>
+  </form>
+  {{!-- <div class="row-md-8 mt-4">
 
+    <input type="checkbox" id="check" onclick="checked" style="width:30px;height:30px;" />
+    <h1>TASK: Compliment someone on their mask.
+      {{task}} </h1>
+  </div> --}}
+
+  <div class="row-md-8 mt-4">
+    <h1>WORTH: 100pts</h1>
+  </div>
+
+
+</div>
 
 </div>
 <script src="/public/JS/kindness.js"></script>
