@@ -16,6 +16,11 @@
 //     });
 // })();
 
+//function for spinning the wheel 
+// function spin(data){
+//    container.on("click");
+
+// }
 
 //act of kindness data
 var data = [
@@ -31,11 +36,8 @@ var data = [
    {"label":"Act 10", "value":100, "act":"Compliment someone on their mask"},
 ];
 
-//function for spinning the wheel 
-function spin(data){
-   container.on("click");
 
-}
-   
+
+
 
 

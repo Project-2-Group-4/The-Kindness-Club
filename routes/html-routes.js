@@ -10,14 +10,14 @@ module.exports = function (app) {
         res.render(path.join(__dirname, "../views/signin"));
 
         if (req.user) {
-            res.redirect("/kindness");
+            res.redirect("/kind");
         }
     });
 
     app.get("/signup", function (req, res) {
         // If the user already has an account send them to the login page
         if (req.user) {
-            res.redirect("/login");
+            res.redirect("/signin");
         }
         res.render(path.join(__dirname, "../views/register"));
     });
