@@ -3,11 +3,7 @@ module.exports = function(sequelize, DataTypes) {
         TaskName: {
             type: DataTypes.STRING,
             notEmpty: true
-        },
-        PointValue:{
-            type: DataTypes.INTEGER,
         }
     });
-   
     return Task;
 }

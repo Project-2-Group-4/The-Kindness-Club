@@ -16,7 +16,7 @@ module.exports = function(passport, user) {
  
         User.findOne({
             where: {
-                user_name: user_name
+                UserName: user_name
             }
         }).then(function(user) {
             if (user){
@@ -27,10 +27,10 @@ module.exports = function(passport, user) {
             } else{
                 const userPassword = generateHash(password);
                 const data = {
-                    user_name: user_name,
-                    password: userPassword,
-                    first_name: req.body.first_name,
-                    last_name: req.body.last_name
+                    UserName: user_name,
+                    Password: userPassword,
+                    FirstName: req.body.first_name,
+                    LastName: req.body.last_name
                 };
  
                 User.create(data).then(function(newUser, created) {
@@ -74,7 +74,7 @@ module.exports = function(passport, user) {
         }
         User.findOne({
             where: {
-                user_name: user_name
+               UserName: user_name
             }
         }).then(function(user) {
             if (!user) {
