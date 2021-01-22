@@ -3,69 +3,38 @@
 <html>
 
 <head>
-    <title>The Kindness Club</title>
+  <title>The Kindness Club</title>
 </head>
 
-<nav class="navbar navbar-fluid-lg navbar-light bg-light">
-  <a class="navbar-brand" href="/home">Kindness Club Home</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="/register">Register<a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/signin">Login</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/kindness">Kindness Acts<a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/rewards">User Rewards<a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/logout">Logout<a>
-      </li>
-    </ul>
-  </div>
-</nav>
 
-<div class="wheelgif"><img src="../public/img/wheel.gif" alt="wheel gif" style="height:25em">
 
+<img
+  src="https://cdn.dribbble.com/users/2598141/screenshots/11467684/media/2509e16692dd873d6c40c799246bb47c.jpg?compress=1&resize=1600x1200"
+  alt="kindnessimg" style="width:50em; height:35em; margin-left:20em ">
 {{!-- add kind act --}}
-      <button class="btn btn-danger btn-lg">
-        <span class="fa fa-plus"></span></button> 
 
+<div class="container" style="margin-top: 30px; margin-bottom: 20px; text-align: center; border:2px solid black">
+  <form>
+    <div class="row-md-8 mt-4">
+      <label><input type="checkbox" id="completed" onclick="checked" style="width:30px;height:30px;"/><h1>TASK: Compliment someone on their mask.
+          {{#each task}}
+          <h1>TASK: {{task}} </h1>
+          {{/each}}
+          </h1></label>
+    </div>
+  </form>
+  {{!-- <div class="row-md-8 mt-4">
 
-<div class="row">
+    <input type="checkbox" id="check" onclick="checked" style="width:30px;height:30px;" />
+    <h1>TASK: Compliment someone on their mask.
+      {{task}} </h1>
+  </div> --}}
 
-      <div class="col-lg-12">
-
-        <div class="card">
-          <div class="card-header">
-       KindActs Database
-          </div>
-          <div class="card-body" id="kind-acts">
-
-            <!-- Content will go in here -->
-
-          </div>
-        </div>
-      </div>
+  <div class="row-md-8 mt-4">
+    <h1>WORTH: 100pts</h1>
   </div>
 
- <form>
-    <div class="row">
-        <h3 id="task">Task:</h3>
-    </div>
-    <div class="row">
-        <h3 id="worth">Worth:</h3>
-    </div>
 
-</form> 
-
-
+</div>
 
 </html>

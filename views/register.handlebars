@@ -12,53 +12,29 @@
         <div class="alert alert-danger">{{error}}</div>
     {{/if}} 
     
-    <body>
-    <nav class="navbar navbar-fluid-lg navbar-light bg-light">
-  <a class="navbar-brand" href="/home">Kindness Club Home</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="/register">Register<a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/signin">Login</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/kindness">Kindness Acts<a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/rewards">User Rewards<a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/logout">Logout<a>
-      </li>
-    </ul>
-  </div>
-</nav>
-    
-    <h1>Register to Join The Kindness Club</h1>
+  
 
- <div class="container">
+    
+    <h1 style= "margin-top:20px; text-align: center;" >Register to Join The Kindness Club</h1>
+ 
+ <div class="container" style= "text-align: center;">
     <form id="register" name="register" method="post" action="/register">
-        <label for="name">Name</label>
-        <input class="text" name="name" type="text"/>
-        <label for="user_name">User Name</label>
-        <input name="user_name" type="text" />
-        <label for="password">Password</label>
-        <input name="password" type="text" />
-        <label for="confirm_password">Confirm Password</label>
-        <input name="confirm_password" type="password" />
+        <label for="name">Name</label> <br>
+        <input class="text" name="name" type="text"/> <br>
+        <label for="user_name">User Name</label> <br>
+        <input name="user_name" type="text" /> <br>
+        <label for="password">Password</label> <br>
+        <input name="password" type="text" /><br>
+        <label for="confirm_password">Confirm Password</label><br>
+        <input name="confirm_password" type="password" /><br>
 
         {{!-- need to add btn function for redirecting to home page if login crudentials to not validate --}}
-        <input class="btn" type="submit" value="Register"/>
+        <input class="btn-btn-primary" type="submit" value="Register" style="margin-top:10px;"/>
     </form>
     </div>
 
-<div class="container">
-    <h2>About Us</h2>
+<div class="container" style= "text-align: center; border: 2px solid black; margin-top: 20px;">
+    <h1 style="margin-top:20px;" >About Us</h1>
   <div class="row">
     <div class="col-md-6">
          <h3>Our Goal</h3>
