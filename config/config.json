@@ -9,7 +9,7 @@
   },
   "test": {
     "username": "root",
-    "password": "password",
+    "password": "password1",
     "database": "sequelize_passport",
     "host": "127.0.0.1",
     "port": 3306,
@@ -17,6 +17,11 @@
   },
   "production": {
     "use_env_variable": "JAWDB_URL",
+    "username": "root",
+    "password": "password1",
+    "database": "sequelize_passport",
+    "host": "127.0.0.1",
+    "port": 3306,
     "dialect": "mysql"
   }
 }

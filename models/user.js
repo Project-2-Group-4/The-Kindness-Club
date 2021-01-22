@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 module.exports = function(sequelize, Sequelize) {
  
@@ -7,6 +8,12 @@ module.exports = function(sequelize, Sequelize) {
             primaryKey: true,
             type: Sequelize.INTEGER
         },
+=======
+module.exports = function (sequelize, Sequelize) {
+
+    var User = sequelize.define('User', {
+    
+>>>>>>> laurenfe
         first_name: {
             type: Sequelize.STRING,
             notEmpty: true
@@ -40,5 +47,21 @@ module.exports = function(sequelize, Sequelize) {
     });
    
 
-    return User;
-}
+
+    User.associate = function (models) {
+
+        User.belongsTo(models.Badge)
+       
+    }
+  return User;
+};
+    
+    
+
+
+// user has 1 badge 
+// badge belongs to user
+
+    
+
+
