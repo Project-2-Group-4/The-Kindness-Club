@@ -17,37 +17,38 @@
 //         wheel.style.transform = `rotate(${actualDeg}deg)`;
 //     });
 // })();
-
-//function for spinning the wheel 
-// function spin(data){
-//    container.on("click");
-
-// }
-
-//act of kindness data
+data = require('../../models/task')
+connect = require("../../config")
 
 
-// let show_task = document.getElementById = ('completed').addEventlister("click", completeTask);
+  
 
-var task_btn = document.getElementById('completed')
+$(function () {
+   $(".display_task").on("click", function (event) {
+      var point_value = $(this).data("pts");
+      var task_name = $(this).data("displayTask");
 
-let task = document.getElementById("task");
-
-let points=document.getElementById("points")
+      var newTask = task_name;
+      var userpts = point_value;
 
 
 
+//  function queryAlltask() {
+//   connection.query("SELECT * FROM songs", function(err, res) {
+//
 
-displayTask.addEventListener("toggle", function () {
-   if ("toggle") {
-   
-      task.hide()
+}); 
+
+      $.ajax("/api/task", {
+         type: "GET",
+         data: newTask,userpts
+      }).then(
+         function () {
+            console.log("update task");
+         
+            location.reload();
+         }
+      );
    }
-   else {
-      task.show()
-      points.show()
-   }
-console.log("displayTask")
-})
+   );
 
-displayTask()

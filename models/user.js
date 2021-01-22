@@ -1,19 +1,7 @@
-<<<<<<< HEAD
-
-module.exports = function(sequelize, Sequelize) {
- 
-    var User = sequelize.define('user', {
-        id: {
-            autoIncrement: true,
-            primaryKey: true,
-            type: Sequelize.INTEGER
-        },
-=======
 module.exports = function (sequelize, Sequelize) {
 
     var User = sequelize.define('User', {
     
->>>>>>> laurenfe
         first_name: {
             type: Sequelize.STRING,
             notEmpty: true
