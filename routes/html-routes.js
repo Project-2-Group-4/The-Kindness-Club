@@ -22,6 +22,7 @@ module.exports = function (app) {
         res.render(path.join(__dirname, "../views/register"));
     });
 
+<<<<<<< HEAD
     app.get("/kind", function (req, res) {
         res.render(path.join(__dirname, "../views/kindness"));
     
@@ -32,4 +33,9 @@ module.exports = function (app) {
         
     });
 
+=======
+    app.get('/signin', function(req, res) {
+        // res.send('Welcome to The Kindness Club');
+    });
+>>>>>>> laurenfe
 };
