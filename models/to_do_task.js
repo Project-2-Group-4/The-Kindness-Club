@@ -1,25 +1,15 @@
-
-module.exports = function (sequelize, Sequelize) {
-
-    var toDoTask = sequelize.define('to_do_task', {
-        id: {
-            autoIncrement: true,
-            primaryKey: true,
-            type: Sequelize.INTEGER
-        },
-
-    
-        task_id: {
-            type: Sequelize.INTEGER,
+module.exports = function(sequelize, DataTypes) {
+    var toDoTask = sequelize.define('ToDoTask', {
+        TaskID: {
+            type: DataTypes.INTEGER,
             allowNull: false
         },
-        user_id: {
-            type: Sequelize.INTEGER,
+        UserID: {
+            type: DataTypes.INTEGER,
             allowNull: false
         },
-
-        completed: {
-            type: Sequelize.BOOLEAN,
+        Completed: {
+            type: DataTypes.BOOLEAN,
             defaultValue: false,
             allowNull: false
         }

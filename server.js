@@ -29,7 +29,7 @@ require("./routes/html-routes.js")(app);
 require('./routes/auth-routes.js')(app, passport);
 require('./config/passport/passport-config.js')(passport, models.user);
  
-models.sequelize.sync().then(function() {
+models.sequelize.sync({ force: true }).then(function() {
     app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });

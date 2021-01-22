@@ -1,44 +1,43 @@
-
-module.exports = function(sequelize, Sequelize) {
+module.exports = function(sequelize, DataTypes) {
  
-    var User = sequelize.define('user', {
-        id: {
-            autoIncrement: true,
-            primaryKey: true,
-            type: Sequelize.INTEGER
-        },
-        first_name: {
-            type: Sequelize.STRING,
+    var User = sequelize.define('User', {
+        FirstName: {
+            type: DataTypes.STRING,
             notEmpty: true
         },
-        last_name: {
-            type: Sequelize.STRING,
+        LastName: {
+            type: DataTypes.STRING,
             notEmpty: true
         },
-        user_name: {
-            type: Sequelize.TEXT,
+        UserName: {
+            type: DataTypes.TEXT,
             notEmpty: true
         },
-        points:{
-            type: Sequelize.INTEGER,
+        Points:{
+            type: DataTypes.INTEGER,
         },
-        email: {
-            type: Sequelize.STRING,
+        Email: {
+            type: DataTypes.STRING,
             validate: {
                 isEmail: true
             }
         },
-        badge_id: {
-            type: Sequelize.INTEGER
-            
-        },
-        password: {
-            type: Sequelize.STRING,
+        Password: {
+            type: DataTypes.STRING,
             allowNull: false
         }
 
     });
-   
 
+    User.associate = function(models) {
+        // We're saying that a Post should belong to an Author
+        // A Post can't be created without an Author due to the foreign key constraint
+        User.belongsTo(models.Badge, {
+          foreignKey: {
+            allowNull: true
+          }
+        });
+      };
+   
     return User;
 }

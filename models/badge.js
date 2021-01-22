@@ -1,26 +1,17 @@
-
-module.exports = function(sequelize, Sequelize) {
+module.exports = function(sequelize, DataTypes) {
  
-    var Badge = sequelize.define('badge', {
-        id: {
-            autoIncrement: true,
-            primaryKey: true,
-            type: Sequelize.INTEGER
-        },
-        badge_name: {
-            type: Sequelize.STRING,
+    var Badge = sequelize.define('Badge', {
+        BadgeName: {
+            type: DataTypes.STRING,
             notEmpty: true
         },
-       
-        points_required:{
-            type: Sequelize.INTEGER,
+        PointsRequired:{
+            type: DataTypes.INTEGER,
         },
-        
-       icon_path: {
-           type: Sequelize.STRING
+       IconPath: {
+           type: DataTypes.STRING
     }
     });
-   
 
     return Badge;
 }
