@@ -1,52 +1,46 @@
-const apiTask_routes = require("../routes/api-task_routes");
-
-module.exports = function (sequelize, Sequelize) {
-
+module.exports = function(sequelize, DataTypes) {
+ 
     var User = sequelize.define('User', {
-    
-        first_name: {
-            type: Sequelize.STRING,
+        FirstName: {
+            type: DataTypes.STRING
+        },
+        LastName: {
+            type: DataTypes.STRING,
             notEmpty: true
         },
-        last_name: {
-            type: Sequelize.STRING,
+        UserName: {
+            type: DataTypes.TEXT,
             notEmpty: true
         },
-        user_name: {
-            type: Sequelize.TEXT,
-            notEmpty: true
+        Points:{
+            type: DataTypes.INTEGER,
+            defaultValue: 0
         },
-        points:{
-            type: Sequelize.INTEGER,
-        },
-        email: {
-            type: Sequelize.STRING,
+        Email: {
+            type: DataTypes.STRING,
             validate: {
                 isEmail: true
             }
         },
-        badge_id: {
-            type: Sequelize.INTEGER
-            
-        },
-        password: {
-            type: Sequelize.STRING,
+        Password: {
+            type: DataTypes.STRING,
             allowNull: false
         }
+        })
 
-    });
-   
-
-
-    User.associate = function (models) {
-
-        User.belongsTo(models.Badge)
-       User.belongsTo(models.Tasks)       
+        User.associate = function(models) {
+            // We're saying that a Post should belong to an Author
+            // A Post can't be created without an Author due to the foreign key constraint
+            User.belongsTo(models.Badge, {
+              foreignKey: {
+                allowNull: false
+              }
+            });
+          };
+       
+        return User;
+    
     }
-  return User;
-};
-    
-    
 
 
 // user has 1 badge 

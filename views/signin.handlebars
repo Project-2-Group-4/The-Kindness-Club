@@ -11,17 +11,13 @@
 
   {{!-- BOOTSTRAP SIGN-IN FORM WITH href button--}}
   <div class="container-main" style="margin-top: 30px; text-align: center;">
-    <form>
       <h1 style="text-decoration:underline">Login</h1>
-      <form id="register" name="register" method="post" action="/register">
-
+      <form id="signin" name="signin" method="post" action="/signin">
         <label for="user_name" style="margin-top:20px;">User Name</label> <br>
         <input name="user_name" type="text" /> <br>
         <label for="password" style="margin-top:20px;">Password</label> <br>
         <input name="password" type="text" /><br>
-
-        <button type="submit" id="submit" class="btn btn-primary" style="margin-top: 20px; margin-bottom: 20px; "
-          href="/kind">Submit</button>
+        <button type="submit" id="submit" class="btn btn-primary" style="margin-top: 20px; margin-bottom: 20px; ">Submit</button>
       </form>
 
   </div>

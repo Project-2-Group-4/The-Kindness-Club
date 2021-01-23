@@ -1,31 +1,31 @@
-
-module.exports = function (sequelize, Sequelize) {
-
-    var toDoTask = sequelize.define('to_do_task', {
-        id: {
-            autoIncrement: true,
-            primaryKey: true,
-            type: Sequelize.INTEGER
-        },
-
-    
-        task_id: {
-            type: Sequelize.INTEGER,
-            allowNull: false
-        },
-        user_id: {
-            type: Sequelize.INTEGER,
-            allowNull: false
-        },
-
-        completed: {
-            type: Sequelize.BOOLEAN,
+module.exports = function(sequelize, DataTypes) {
+    var ToDoTask = sequelize.define('ToDoTask', {
+        Completed: {
+            type: DataTypes.BOOLEAN,
             defaultValue: false,
             allowNull: false
+        },
+        PointsEarned: {
+            type: DataTypes.INTEGER,
+            allowNull: false
         }
-
     });
 
+    ToDoTask.associate = function(models) {
+        // We're saying that a Post should belong to an Author
+        // A Post can't be created without an Author due to the foreign key constraint
+        ToDoTask.belongsTo(models.Task, {
+          foreignKey: {
+            allowNull: false
+          }
+        });
 
-    return toDoTask;
+        ToDoTask.belongsTo(models.User, {
+            foreignKey: {
+              allowNull: false
+            }
+          });
+    };
+
+    return ToDoTask;
 }
