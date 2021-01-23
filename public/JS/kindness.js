@@ -1,11 +1,12 @@
 
+
 $(document).ready(function() {
    console.log('hello')
    
      $.get("/api/task", function(task) {
         console.log("task", task);
 
-
+      
 
         var elTask = document.getElementById('daily-task')
         elTask.textContent = task.TaskName
