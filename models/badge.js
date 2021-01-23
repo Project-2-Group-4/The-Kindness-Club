@@ -1,33 +1,26 @@
-
-module.exports = function(sequelize, Sequelize) {
- 
+module.exports = function(sequelize, DataTypes) {
     var Badge = sequelize.define('Badge', {
-   
-        badge_name: {
-            type: Sequelize.STRING,
+        BadgeName: {
+            type: DataTypes.STRING,
             notEmpty: true
         },
-       
-        points_required:{
-            type: Sequelize.INTEGER,
+        PointsRequired:{
+            type: DataTypes.INTEGER,
         },
-        
-       icon_path: {
-           type: Sequelize.STRING
+       IconPath: {
+           type: DataTypes.STRING
     }
     });
-   
 
   Badge.associate = function(models) {
-
       Badge.hasOne(models.User, {
-        foreignKey: {
-        allowNull: false
-      }
-    });
+            foreignKey: {
+            allowNull: true
+            }
+        });
     };
-return Badge;
-      }
+    return Badge;
+}
        
   
 

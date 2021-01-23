@@ -23,12 +23,20 @@ module.exports = function (app) {
     });
 
     app.get("/kind", function (req, res) {
-        res.render(path.join(__dirname, "../views/kindness"));
-    
+        res.render("kindness", 
+            {User: 
+                { 
+                    UserName: req.user.UserName, 
+                    Points: req.user.Points, 
+                    FirstName: req.user.FirstName, 
+                    LastName: req.user.LastName 
+                }
+            }
+        );
     });
 
     app.get("/reward", function (req, res) {
-        res.render(path.join(__dirname, "../views/reward"));
+        res.render("reward");
         
     });
 
