@@ -16,7 +16,7 @@
     "dialect": "mysql"
   },
   "production": {
-    "use_env_variable": "JAWDB_URL",
+    "use_env_variable": "JAWSDB_URL",
     "username": "root",
     "password": "password1",
     "database": "sequelize_passport",
