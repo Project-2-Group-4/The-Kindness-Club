@@ -1,19 +1,9 @@
-<<<<<<< HEAD
+const apiTask_routes = require("../routes/api-task_routes");
 
-module.exports = function(sequelize, Sequelize) {
- 
-    var User = sequelize.define('user', {
-        id: {
-            autoIncrement: true,
-            primaryKey: true,
-            type: Sequelize.INTEGER
-        },
-=======
 module.exports = function (sequelize, Sequelize) {
 
     var User = sequelize.define('User', {
     
->>>>>>> laurenfe
         first_name: {
             type: Sequelize.STRING,
             notEmpty: true
@@ -51,7 +41,7 @@ module.exports = function (sequelize, Sequelize) {
     User.associate = function (models) {
 
         User.belongsTo(models.Badge)
-       
+       User.belongsTo(models.Tasks)       
     }
   return User;
 };

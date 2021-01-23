@@ -1,22 +1,35 @@
 
-module.exports = function(sequelize, Sequelize) {
+
+
+module.exports = function (sequelize, DataTypes) {
  
-    var Task = sequelize.define('task', {
+    var Tasks = sequelize.define('Tasks', {
         id: {
-            autoIncrement: true,
+            type: DataTypes.INTEGER,
+           autoIncrement: true,
             primaryKey: true,
-            type: Sequelize.INTEGER
+         
         },
         task_name: {
-            type: Sequelize.STRING,
+            type: DataTypes.STRING,
             notEmpty: true
         },
         
         point_value:{
-            type: Sequelize.INTEGER,
+            type: DataTypes.INTEGER,
         }
     });
-   
+Tasks.associate = function(models) {
 
-    return Task;
+     Tasks.hasOne(models.User, {
+        foreignKey: {
+        allowNull: false
+      }
+    });
+    };
+
+    return Tasks;
+//     Tasks.sync().then(() => {
+//   console.log('table created');
+// });
 }
