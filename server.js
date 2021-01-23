@@ -32,7 +32,6 @@ require('./routes/api-badge_routes.js')(app);
 require('./routes/api_signin_routes.js')(app);
 require('./config/passport/passport-config.js')(passport, models.user);
 
- 
 models.sequelize.sync().then(function() {
     app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
