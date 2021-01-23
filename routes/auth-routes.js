@@ -3,16 +3,18 @@ var authController = require('../controllers/auth_controller.js');
 module.exports = function(app, passport) {
     app.get('/register', authController.register);
     app.get('/signin', authController.signin);
-    app.post('/register', passport.authenticate('local-signup', {
-            successRedirect: '/home',
-            failureRedirect: '/register'
+    app.post('/register', passport.authenticate('local-register', {
+            successRedirect: '/kind',
+            failureRedirect: '/register',
+            failureFlash: true
         }
     ));
     app.get('/logout',authController.logout);
-    app.get('/home', isLoggedIn, authController.home);
+    app.get('/kind', isLoggedIn, authController.home);
     app.post('/signin', passport.authenticate('local-signin', {
-            successRedirect: '/home',
+            successRedirect: '/kind',
             failureRedirect: '/signin',
+            failureFlash: true
         })
     );
     function isLoggedIn(req, res, next) {

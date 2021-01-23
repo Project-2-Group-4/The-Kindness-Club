@@ -16,8 +16,13 @@ app.use(passport.session());
 app.use(express.static(__dirname + '/public'));
 
 //Set the templating engine for views as handlebars!
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.engine("handlebars", exphbs({ 
+    defaultLayout: "main",
+    helpers: {
+    }
+}));
 app.set("view engine", "handlebars");
+
 
 var PORT = process.env.PORT || 8080;
 
