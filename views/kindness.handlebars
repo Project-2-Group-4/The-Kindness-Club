@@ -1,10 +1,5 @@
 {{!-- This is the kindness generator home page --}}
-<!DOCTYPE html>
-<html>
 
-<head>
-  <title>The Kindness Club</title>
-</head>
 
 <h1>Hello {{User.FirstName}} {{User.LastName}}</h1>
 <h1>Your point balance is {{User.Points}}</h1>
@@ -14,51 +9,25 @@
   alt="kindnessimg" style="width:50em; height:35em; margin-left:20em ">
 {{!-- add kind act --}}
 
-{{!-- 
 
 <div class="container" style="margin-top: 30px; margin-bottom: 20px; text-align: center; border:2px solid black">
   <form>
     <div class="row-md-8 mt-4">
-      <label><input type="checkbox" id="completed" onclick="checked" style="width:30px;height:30px;"/><h1>TASK: Compliment someone on their mask.
-          {{#each task}}
-          <div id="task"><h1>TASK: {{task}} </h1>
-          {{/each}}
-          </h1></label>
+      <label>
+      <input type="checkbox" id="completed" onclick="checked" style="width:30px;height:30px;"/>
+   
+   
+          <div id="task">
+       <h1>TASK: {{task.TaskName}} </h1>
+  
+  
+          </label>
           </div>
     </div>
-  </form> --}}
-  {{!-- <div class="row-md-8 mt-4">
-    <input type="checkbox" id="check" onclick="checked" style="width:30px;height:30px;" />
-    <h1>TASK: Compliment someone on their mask.
-      {{task}} </h1>
-  </div> --}}
+  </form> 
 
-  <div class="row-md-8 mt-4">
-    <h1>WORTH: 100pts</h1>
-  </div>
 
-<div class="container" style="margin-top: 30px; margin-bottom: 20px; text-align: center; border:2px solid black">
-<form action= "/api/task/:task" method="GET">
 
- <div class="row-md-8 mt-4" >
-
-	<button class="display_task" data-pts="{{point_value}}" data-displayTask="{{task_name}}">
-
-	</button>
-      <label><input  id="task" 
-     style="width:30px;height:30px;"/><h1>TASK: Compliment someone on their mask.
-          {{#each task_name}}
-          <h1>TASK: {{task_name}} </h1>
-          {{/each}}
-          </h1></label>
-    </div>
-  </form>
-  {{!-- <div class="row-md-8 mt-4">
-
-    <input type="checkbox" id="check" onclick="checked" style="width:30px;height:30px;" />
-    <h1>TASK: Compliment someone on their mask.
-      {{task}} </h1>
-  </div> --}}
 
   <div class="row-md-8 mt-4">
     {{!-- <h1>WORTH: 100pts</h1> --}}
@@ -68,6 +37,6 @@
 </div>
 
 </div>
-{{!-- <script src="/public/JS/kindness.js"></script> --}}
-</html>
+ <script src="/JS/kindness.js"></script> 
+
 
