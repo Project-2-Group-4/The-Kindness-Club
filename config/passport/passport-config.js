@@ -4,7 +4,7 @@ module.exports = function(passport, user) {
     var User = user;
     var LocalStrategy = require('passport-local').Strategy;
  
-    passport.use('local-signup', new LocalStrategy({
+    passport.use('local-register', new LocalStrategy({
         usernameField: 'user_name',
         passwordField: 'password',
         passReqToCallback: true
@@ -13,17 +13,13 @@ module.exports = function(passport, user) {
         var generateHash = function(password) {
             return bCrypt.hashSync(password, bCrypt.genSaltSync(8), null);
         };
- 
         User.findOne({
             where: {
                 UserName: user_name
             }
         }).then(function(user) {
-            if (user){
-                console.log('user already exists');
-                return done(null, false, {
-                    message: 'That user name is in use already.'
-                });
+            if(user){
+                return done(null, false, {message: 'Username already in use.'});
             } else{
                 const userPassword = generateHash(password);
                 const data = {
@@ -35,9 +31,8 @@ module.exports = function(passport, user) {
  
                 User.create(data).then(function(newUser, created) {
                     if (!newUser) {
-                        return done(null, false);
+                        return done(null, false, {message: 'User could not be created.'});
                     }
- 
                     if (newUser) {
                         return done(null, newUser);
                     }
@@ -78,21 +73,16 @@ module.exports = function(passport, user) {
             }
         }).then(function(user) {
             if (!user) {
-                console.log('user doesnt exist');
-                return done(null, false, req.flash('signupMessage', 'user doest exist.'));;
+                return done(null, false, {message: 'Username does not exist.'})
             }
- 
             if (!isValidPassword(user.Password, password)) {
-                console.log('invalid pass');
-                return done(null, false, req.flash('signupMessage', 'invalid passwrd.'));
+                return done(null, false, {message: 'Invalid password.'});
             }
             var userinfo = user.get();
             return done(null, userinfo);
         }).catch(function(err) {
             console.log("error in signin");
-            return done(null, false, {
-                message: 'There is an error with the sign-in process.'
-            });
+            return done(null, false, {message: 'There is an error with the sign-in process.'});
         });
     }
     ));
