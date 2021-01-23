@@ -1,11 +1,12 @@
 // const { brotliDecompress } = require("zlib");
-var db = require("../models");
+
+ var db = require("../models");
 
 module.exports = function (app) {
   // Get route for returning kind tasks and points 
-  app.get("/api/task", function(req, res) {
- 
-    db.Tasks.findAll({
+   app.get("/api/task", function(req, res) {
+   
+  db.Tasks.findAll({
      
     }).then(function(dbTask) {
       res.json(dbTask);
@@ -14,13 +15,14 @@ module.exports = function (app) {
     });
   });
 
-    app.get("/api/task/:task",
+        app.get("/api/task/:id",
         function (req, res) {
             db.Tasks.findOne({
-                where: {
-                   id: req.params.Task
+              where: {
+              
+                   id: req.params.id
               },
-              // include: [db.User]
+              include: [db.Badge]
             })
                 .then(function (dbTask) {
                   res.json(dbTask)
@@ -29,27 +31,15 @@ module.exports = function (app) {
                     
                 });
         });
-    //  Post route for saving a new User Task
-      app.post("/api/task", function(req, res) {
-    console.log(req.body);
-    db.Task.create({
-     task_name: req.body.task_name,
-     point_value: req.body.point_value,
-     UserId: req.body.UserId
-    })
-      .then(function(dbTask) {
-        res.json(dbTask);
-  
-      });
-  });
+    
   
     
   // PUT route for updating task with userId
   app.put("/api/task", function(req, res) {
-    db.Task.update(req.body,
+    db.Tasks.update(req.body,
       {
         where: {
-          UserId: req.body.UserId
+         TasksId: req.body.TasksId
         }
       })
       .then(function(dbTask) {
@@ -58,5 +48,4 @@ module.exports = function (app) {
   });
 };
     
-    
-    
+

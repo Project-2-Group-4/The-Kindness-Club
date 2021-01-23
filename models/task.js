@@ -1,5 +1,7 @@
 
-module.exports = function(sequelize, DataTypes) {
+
+
+module.exports = function (sequelize, DataTypes) {
  
     var Tasks = sequelize.define('Tasks', {
         id: {
@@ -17,7 +19,17 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.INTEGER,
         }
     });
-   
+Tasks.associate = function(models) {
+
+     Tasks.hasOne(models.User, {
+        foreignKey: {
+        allowNull: false
+      }
+    });
+    };
 
     return Tasks;
+//     Tasks.sync().then(() => {
+//   console.log('table created');
+// });
 }

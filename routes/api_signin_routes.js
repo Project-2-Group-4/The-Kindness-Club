@@ -1,5 +1,7 @@
 // const { brotliDecompress } = require("zlib");
 var db = require("../models");
+// var User= require("../models/user");
+
 
 module.exports = function (app) {
 
@@ -17,7 +19,8 @@ module.exports = function (app) {
         app.get("/api/user/:id",
         function (req, res) {
             db.User.findOne({
-                where: {
+              where: {
+              
                    id: req.params.id
               },
               include: [db.Badge]

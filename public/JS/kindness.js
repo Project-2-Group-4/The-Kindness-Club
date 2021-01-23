@@ -17,11 +17,15 @@
 //         wheel.style.transform = `rotate(${actualDeg}deg)`;
 //     });
 // })();
-data = require('../../models/task')
+db = require('../../server')
 connect = require("../../config")
 
 
-  
+
+
+
+
+
 
 $(function () {
    $(".display_task").on("click", function (event) {
