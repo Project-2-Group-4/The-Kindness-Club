@@ -5,18 +5,20 @@ $(document).ready(function() {
      $.get("/api/task", function(task) {
         console.log("task", task);
 
+
+
+        var elTask = document.getElementById('daily-task')
+        elTask.textContent = task.TaskName
+
+
       /* 
+      append task to page ---DONE
       get random task to append too page
       get random point value to append to page
       event handler to mark task complete to get points
       button clicked =points are earned and new task is populated on kindness page
       user id and task id are written to table
       every time user clicks button update user score with points earned 
-
-   
-
-
-      
       */
 
       });
