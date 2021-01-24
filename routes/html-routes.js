@@ -29,13 +29,7 @@ module.exports = function (app) {
             res.redirect("/signin");
         }
         res.render("kindness", 
-            {User: 
-                { 
-                    UserName: req.user.UserName, 
-                    Points: req.user.Points, 
-                    FirstName: req.user.FirstName, 
-                    LastName: req.user.LastName 
-                }
+            {User: req.user
             }
         );
     });
