@@ -13,6 +13,6 @@ USE sequelize_passport;
 -- 	PRIMARY KEY (id)
 -- );
 
--- INSERT INTO Tasks (task_name, point_value) VALUES ('be nice',200);
--- INSERT INTO Tasks (task_name, point_value) VALUES ('compliment a freind',100);
+INSERT INTO Tasks (task_name, point_value) VALUES ('be nice',100);
+INSERT INTO Tasks (task_name, point_value) VALUES ('compliment a freind',100);
 
