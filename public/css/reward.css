@@ -1,0 +1,27 @@
+h1{
+    text-align:center; 
+    margin-top:20px;
+     margin-bottom:20px; 
+    text-decoration:underline;
+}
+body{
+    background-color:#f7e9ee;
+}
+img{
+    width:80%;
+    height:45em;
+    margin-left:120px;
+
+}
+
+#container{
+    margin-top:20px;
+     text-align:center;
+}
+
+.card{
+    margin-top:20px; 
+    margin-bottom:20px;
+    text-align: center;
+    
+}

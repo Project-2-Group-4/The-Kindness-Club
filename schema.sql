@@ -16,6 +16,3 @@ USE sequelize_passport;
 INSERT INTO Tasks (task_name, point_value) VALUES ('be nice',100);
 INSERT INTO Tasks (task_name, point_value) VALUES ('compliment a freind',100);
 
--- SELECT * FROM Tasks
--- ORDER BY RAND()
--- LIMIT 1

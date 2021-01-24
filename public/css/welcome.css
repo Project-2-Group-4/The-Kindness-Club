@@ -1,0 +1,18 @@
+img{
+    width:100%;
+    height:35em;
+    
+}
+body{
+    background-color:#7fcad1;
+}
+h3{
+    margin-top: 10px; 
+    text-align: center;
+}
+#container-main{
+    background-color:white;
+}
+.login,.register{
+color:orange;
+}

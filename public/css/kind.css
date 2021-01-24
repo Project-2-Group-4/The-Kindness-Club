@@ -1,0 +1,19 @@
+h1,h2{
+font-family: Arial, Helvetica, sans-serif;
+}
+img{
+background-color:#ffe8a9;
+ width:50em;
+ height:35em;
+ margin-left:20em 
+}
+body{
+    background-color:#ffe8a9;
+}
+.container{
+    background-color:white;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+    border:2px solid black;
+}
