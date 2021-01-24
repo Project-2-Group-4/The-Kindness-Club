@@ -13,11 +13,11 @@ module.exports = function(sequelize, DataTypes) {
     });
 
   Badge.associate = function(models) {
-      Badge.hasOne(models.User, {
-            foreignKey: {
-            allowNull: true
-            }
-        });
+    Badge.belongsTo(models.User, {
+        foreignKey: {
+          allowNull: false
+        }
+      });
     };
     return Badge;
 }
