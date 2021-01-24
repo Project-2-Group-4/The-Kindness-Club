@@ -6,15 +6,13 @@ var db = require("../models");
 
 module.exports = function (app) {
 
-
 function getRandomIntInclusive(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1) + min); 
 }
-  app.get("/api/task", function (req, res) {
 
-  
+  app.get("/api/task", function (req, res) {
     db.Task.findAll({})
        .then(function (tasks) {
          console.log("tasks", tasks.length)
@@ -24,6 +22,7 @@ function getRandomIntInclusive(min, max) {
       });
   });
     
+
   // PUT route for updating task with userId
   app.put("/api/task", function (req, res) {
     db.Tasks.update(req.body,
