@@ -2,11 +2,12 @@ module.exports = function(sequelize, DataTypes) {
     var ToDoTask = sequelize.define('ToDoTask', {
         Completed: {
             type: DataTypes.BOOLEAN,
-            defaultValue: false,
+            defaultValue: 100,
             allowNull: false
         },
         PointsEarned: {
             type: DataTypes.INTEGER,
+            defaultValue: 100,
             allowNull: false
         }
     });
