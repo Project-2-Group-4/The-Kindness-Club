@@ -8,6 +8,10 @@
       //   // new task is shown in div by refreshing the page
       //   window.location.reload()
 
+// const { notBetween } = require("sequelize/types/lib/operators");
+
+
+
 // const task = require("../../models/task")
 
       /* 
@@ -19,6 +23,12 @@
       user id and task id are written to table 
       every time user clicks button update user score with points earned 
       */
+
+
+
+//  let task= require("../../models/task")
+
+
 $(document).ready(function () {
 
   $.get("/api/task", function (task) {
@@ -35,10 +45,11 @@ $(document).ready(function () {
    
     var pointsEarned = document.getElementById("pointsEarn");
     pointsEarned.textContent = task.PointsEarned
+   
     console.log(task.PointsEarned)
+  
+ 
   }
-     
-    
   )
 
 
@@ -50,6 +61,7 @@ $(document).ready(function () {
     
     var newPoints = {
       points: 100,
+      output: 0
  
     }
     $.ajax({
@@ -58,23 +70,37 @@ $(document).ready(function () {
       data: newPoints
     })
       .then(function () {
+       
         window.location.reload()
+  
       })
-    
-    $.get("/api/task", function (task) {
   
-      console.log(task.PointsEarned)
-   
-      
   
- 
-})
-    
-  })
-})
+    // $.get("/api/points", function (dbpts) {
+    //   $.ajax({
+    //     url: "/api/points",
+    //     method: "GET",
+    //     data: dbpts
+    //   })
+    //     .then(function () {
+    //       document.getElementById("output").innerHTML = JSON.stringify(dbpts)
+    //     })
+    //   console.log(newPoints)
+
+    });
+  });
+
+
+
+
+
+  
+
+  
 
 
       
 
 // you can loop thru this indevidually  allow to turn something into an itterable array filter() map() reduce()
 
+      
