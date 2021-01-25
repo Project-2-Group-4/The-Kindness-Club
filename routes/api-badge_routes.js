@@ -5,7 +5,7 @@ module.exports = function (app) {
   // Get route for returning kind tasks and points 
   app.get("/api/reward", function (req, res) {
  
-    db.Badge.findAll({
+    db.User.findAll({
      
     }).then(function (dbBadge) {
       res.json(dbBadge);
@@ -13,6 +13,10 @@ module.exports = function (app) {
     });
   }
   );
+
+
+
+
 
   app.get("/api/reward/:",
     function (req, res) {
