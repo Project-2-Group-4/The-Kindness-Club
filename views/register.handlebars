@@ -1,62 +1,58 @@
 <html>
+
 <head>
-    <title>Register for The Kindness Club</title>
+  <title>Register for The Kindness Club</title>
 </head>
+
 <body>
-  
-<h1 style= "margin-top:20px; text-align: center; text-decoration:underline" >Register to Join The Kindness Club</h1>
- 
-{{#if error}}
-    <div class="alert alert-danger">{{error}}</div>
-{{/if}}
-    
- <div class="container" style= "text-align: center;">
+  <link rel="stylesheet" href="/css/register.css">
+
+  <h1 style="margin-top:20px; text-align: center; text-decoration:underline">Register to Join The Kindness Club</h1>
+
+  {{#if error}}
+  <div class="alert alert-danger">{{error}}</div>
+  {{/if}}
+
+  <div class="container" style="text-align: center;">
     <form id="register" name="register" method="post" action="/register">
-        <label for="first_name">First Name</label> <br>
-        <input class="text" name="first_name" type="text"/> <br>
-        <label for="last_name">Last Name</label> <br>
-        <input class="text" name="last_name" type="text"/> <br>
-        <label for="user_name">User Name</label> <br>
-        <input name="user_name" type="text" /> <br>
-        <label for="password">Password</label> <br>
-        <input name="password" type="password" /><br>
-        <label for="confirm_password">Confirm Password</label><br>
-        <input name="confirm_password" type="password" /><br>
+      <label for="first_name">First Name</label> <br>
+      <input class="text" name="first_name" type="text" /> <br>
+      <label for="last_name">Last Name</label> <br>
+      <input class="text" name="last_name" type="text" /> <br>
+      <label for="user_name">User Name</label> <br>
+      <input name="user_name" type="text" /> <br>
+      <label for="password">Password</label> <br>
+      <input name="password" type="password" /><br>
+      <label for="confirm_password">Confirm Password</label><br>
+      <input name="confirm_password" type="password" /><br>
 
-        {{!-- need to add btn function for redirecting to home page if login crudentials to not validate --}}
-        <input class="btn-btn-primary" type="submit" value="Register" style="margin-top:10px;"/>
+      {{!-- need to add btn function for redirecting to home page if login crudentials to not validate --}}
+      <input class="btn-btn-primary" type="submit" value="Register" style="margin-top:10px;" />
     </form>
-    </div>
-
-
-<div class="container" style= "text-align: center; border: 2px solid black; margin-top: 20px;">
-    <h1 style="margin-top:20px; text-decoration:underline" >About Us</h1>
-
-  <div class="row">
-    <div class="col-md-6">
-         <h3>Our Goal</h3>
-       
-           <p>.......</p>
-    </div>
   </div>
 
-  <div class="row">
-    <div class="col-md-6">
-    <h3>Our Mission</h3>
-    <p>.......</p>
-   
-    </div>
-  </div>
 
-  <div class="row">
-    <div class="col-md-6">
-    <h3>Our Story</h3>
-    <p>.......</p>
-   
-    </div>
-  </div>
+  <div class="container" style="text-align: center; border: 2px solid black; margin-top: 20px;">
+    <h1 style="margin-top:20px; text-decoration:underline;">About Us</h1>
 
-</div>
+    <div class="row">
+      <div class="col-sm-12">
+        <h3>Our Goal</h3>
+        <h4>Overall, our goal is to make the world better than it was yesterday. We intend to acheive this by
+          incorporating a random act of kindness into your daily routine.</h4><br>
+
+        <h3>Our Story</h3>
+        <h4>We are a group of four junior developers who all have a passion to make applications that are welcoming,
+          inclusive, and safe space for all people. </h4>
+
+      </div>
+    </div>
+
+
+
+
+  </div>
 
 </body>
+
 </html>
