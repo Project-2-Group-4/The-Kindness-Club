@@ -1,4 +1,4 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
  
     var User = sequelize.define('User', {
         FirstName: {
@@ -12,7 +12,7 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.TEXT,
             notEmpty: true
         },
-        Points:{
+        Points: {
             type: DataTypes.INTEGER,
             // defaultValue: 0
         },
@@ -26,17 +26,17 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false
         }
-        })
+    })
 
-        User.associate = function(models) {
-            // We're saying that a Post should belong to an Author
-            // A Post can't be created without an Author due to the foreign key constraint
-            User.hasMany(models.Badge);
-            
-          };
+    User.associate = function (models) {
+        // We're saying that a Post should belong to an Author
+        // A Post can't be created without an Author due to the foreign key constraint
+        User.hasMany(models.Badge)
+     
+    };
        
-        return User;  
-    }
+    return User;
+};
 
 
 // user has 1 badge 

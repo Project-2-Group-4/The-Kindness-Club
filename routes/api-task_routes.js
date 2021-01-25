@@ -21,18 +21,24 @@ function getRandomIntInclusive(min, max) {
         res.json(randomTask)
       });
   });
+    app.get("/api/points", function(req, res) {
+    db.Task.findAll({}).then(function(dbpts) {
+      res.json(dbpts);
+      console.log(dbpts)
+    });
+  });
     
-
   // PUT route for updating task with userId
-  app.put("/api/task", function (req, res) {
-    db.Tasks.update(req.body,
+  app.put("/api/task/user", function (req, res) {
+    db.Tasks.create(req.body,
       {
         where: {
-          TasksId: req.body.TasksId
+   PointsEarned: req.body.PointsEarned
         }
       })
-      .then(function (dbTask) {
-        res.json(dbTask);
+      .then(function (task) {
+        res.json(task);
+        console.log(task)
       });
   }) 
   
