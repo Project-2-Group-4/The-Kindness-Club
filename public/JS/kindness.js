@@ -1,15 +1,32 @@
 
 
+
 var ptCount = 100;
 // var ptBal=dbBadge[1].Points
 
 
+
+
 $(document).ready(function () {
 
-   
+
+ $("#complete").on("click", function(){
+   var newPoints = {
+     points: 100
+   }
+   $.ajax({
+     url: "/api/user", 
+     method: "PUT",
+     data: newPoints
+   }).then(function(){
+     window.location.reload()
+   })
+ })
+ 
   $.get("/api/task", function (task) {
      console.log("task", task);
     console.log("task", task.PointsEarned);
+
 
    
     var elTask = document.querySelector('#daily-task')
@@ -28,6 +45,16 @@ let pointsAdded = document.getElementById('complete').addEventListener("click", 
 
 
 
+   
+
+//     task.onclick = function () {
+//       // append points to page for user id logged in
+//       // this is keeping track of points and awarding them to the user id logged in
+//       //added default value of 100 in task.js for models
+//       var elPoints = document.getElementById('points')
+//       elPoints.textContent = "Worth:"+ Tasks.pointsEarned
+//       // new task is shown in div by refreshing the page
+//       window.location.reload()
 
       /* 
       append task to page ---DONE
@@ -38,6 +65,7 @@ let pointsAdded = document.getElementById('complete').addEventListener("click", 
       user id and task id are written to table 
       every time user clicks button update user score with points earned 
       */
+
 
 
     //  //mark task as completed in the db
@@ -54,8 +82,6 @@ let pointsAdded = document.getElementById('complete').addEventListener("click", 
     //  // append points to page for user id logged in
     //  // this is keeping track of points and awarding them to the user id logged in
     //  //added default value of 100 in task.js for models
-
-
 
 
 

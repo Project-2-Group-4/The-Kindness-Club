@@ -5,37 +5,56 @@ var db = require("../models");
 
 module.exports = function (app) {
 
- app.get("/api/user", function(req, res) {
-   
-  db.User.findAll({
-     
-    }).then(function(dbUser) {
+  app.get("/api/user", function (req, res) {
+
+    db.User.findAll({
+
+    }).then(function (dbUser) {
       res.json(dbUser);
       console.log(dbUser);
-        console.log("working");
+      console.log("working");
     });
   });
 
-        app.get("/api/user/:id",
-        function (req, res) {
-            db.User.findOne({
-              where: {
-              
-                   id: req.params.id
-              },
-              include: [db.Badge]
-            })
-                .then(function (dbUser) {
-                  res.json(dbUser)
-                  console.log(dbUser);
-                  console.log("working");
-                    
-                });
+  app.get("/api/user/:id",
+    function (req, res) {
+      db.User.findOne({
+        where: {
+
+          id: req.params.id
+        },
+        include: [db.Badge]
+      })
+        .then(function (dbUser) {
+          res.json(dbUser)
+          console.log(dbUser);
+          console.log("working");
+
         });
-    
-    
+    });
+  app.put("/api/user", function (req, res) {
+    console.log("current",req.user, req.body.points);
+     
+    db.User.update(
+      
+    {
+      Points: req.body.points
+    },
+      {
+
+      where: {
+
+        id: req.user.id
+      }
+    },function (dbUser) {
+        res.json(dbUser)
+        console.log(dbUser);
+        console.log("working");
+
+      });
+  })
+
 }
 
 
 
- 

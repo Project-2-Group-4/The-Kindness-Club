@@ -35,6 +35,7 @@ function getRandomIntInclusive(min, max) {
       .then(function (dbTask) {
         res.json(dbTask);
       });
+
   });
 
   //   app.get("/api/points", function (req, res) {
@@ -48,7 +49,10 @@ function getRandomIntInclusive(min, max) {
   //       res.json(task);
   //     });
   // });
+
+  }) 
   
+
 }
   
 
