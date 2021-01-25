@@ -2,8 +2,8 @@
 <link rel="stylesheet" href="/css/kind.css">
 
 <h2>Hello, {{User.FirstName}} {{User.LastName}}</h2>
-<h2 id="point-balance">Your point balance is {{User.Points}}</h2>
-
+ <div id="point-balance">Your point balance is {{task.PointsEarned}}</div>
+ 
 
 <img
   src="https://cdn.dribbble.com/users/2598141/screenshots/11467684/media/2509e16692dd873d6c40c799246bb47c.jpg?compress=1&resize=1600x1200"
@@ -14,12 +14,16 @@
 <div class="container">
   <div class="row-md-8 mt-4">
     <h2>TASK:</h2>
-    <h2 id="daily-task"></h2>
+    <h2 id="daily-task" class="pts"></h2>
+   
+   
   </div>
 
   <button id="complete" onclick="window.location.reload();">I DID THIS!</button>
   <div class="row-md-8 mt-4">
-    <h3>WORTH: 100pts</h3>
+    <h3>WORTH:100</h3>
+     <h2 class="pts"></h2>
+       {{!-- <h2 id="daily-pnt"></h2> --}}
   </div>
 
 
