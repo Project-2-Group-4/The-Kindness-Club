@@ -3,6 +3,10 @@
 h1,h2{
 font-family: 'Roboto', sans-serif;
 }
+#pts-bal{
+    padding-left: 25px;
+    font-weight: bolder;
+}
 img{
 background-color:#ffe8a9;
  width:50em;
