@@ -30,7 +30,7 @@ $(document).ready(function () {
 
    
     var elTask = document.querySelector('#daily-task')
-    elTask.textContent = task.TaskName + "" + "Points Earned" + task.PointsEarned
+    elTask.textContent = task.TaskName 
     // var elPts=document.querySelector('.pts')
     // elPts.textContent = task.PointsEarned
      
@@ -38,16 +38,23 @@ $(document).ready(function () {
 
   });
 })
+var pointScore = 0;
+var button = document.querySelector("#complete");
+//var pointsBalance = document.querySelector("#points-balance")
 
-let pointsAdded = document.getElementById('complete').addEventListener("click", function () {
-  console.log("clicked")
-  });
+button.addEventListener("click", function () {
+  pointScore++;
+  button.textContent = "Your points balance is:" + pointScore;
+
+  
+})
+
 
 
 
    
 
-//     task.onclick = function () {
+//     task.onclick = function 
 //       // append points to page for user id logged in
 //       // this is keeping track of points and awarding them to the user id logged in
 //       //added default value of 100 in task.js for models
