@@ -26,17 +26,20 @@ $(document).ready(function () {
  })
  
   $.get("/api/task", function (task) {
-     console.log("task", task);
-  //  console.log("task", task.PointsEarned);
+    console.log("task", task);
+    //  console.log("task", task.PointsEarned);
  
     let pts = task.PointsEarned
-       let pointsContainer =Object.assign(pts)
-
+    let pointsContainer = Object.assign(pts)
+    var total = []
     console.log(pts + pointsContainer)
-
-
-   
-
+    var arr = [{ pts }, { pointsContainer }];
+    console.log(arr)
+ 
+    total.push({ arr },{ pointsContainer });
+    
+   console.log(total)
+    
     var elTask = document.querySelector('#daily-task')
     elTask.textContent = task.TaskName 
     var elPts=document.querySelector('.pts')

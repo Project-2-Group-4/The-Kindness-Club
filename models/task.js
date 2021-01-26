@@ -10,6 +10,9 @@ module.exports = function(sequelize, DataTypes) {
             defaultValue: 100,
             allowNull: false
         }
+        // PointsBalence: {
+        //     type:DataTypes.INTEGER,
+        // }
     });
 
    Task.associate = function(models) {
