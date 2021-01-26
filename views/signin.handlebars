@@ -6,13 +6,13 @@
 </head>
 
 <body>
-
+<link rel="stylesheet" href="/css/signin.css">
 {{#if error}}
     <div class="alert alert-danger">{{error}}</div>
 {{/if}}
 
   {{!-- BOOTSTRAP SIGN-IN FORM WITH href button--}}
-  <div class="container-main" style="margin-top: 30px; text-align: center;">
+  <div class="container-main">
       <h1 style="text-decoration:underline">Login</h1>
       <form id="signin" name="signin" method="post" action="/signin">
         <label for="user_name" style="margin-top:20px;">User Name</label> <br>
