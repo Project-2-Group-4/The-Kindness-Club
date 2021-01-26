@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
 body{
   
     background-color:lightskyblue;
@@ -9,6 +11,7 @@ body{
     border: 2px solid black;
     margin-top: 20px;
     background-color: white;
+     font-family: 'Roboto', sans-serif;
 
 }
 
@@ -18,5 +21,5 @@ h1{
 
 
 h4{
-    font-family: 'Hind Siliguri', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
