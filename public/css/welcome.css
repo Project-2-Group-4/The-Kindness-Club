@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
 img{
     width:100%;
     height:35em;
@@ -9,10 +11,23 @@ body{
 h3{
     margin-top: 10px; 
     text-align: center;
+    font-family: 'Roboto', sans-serif;
+    text-shadow: black;
+    font-weight: bolder;
 }
-#container-main{
+.container-main{
     background-color:white;
+    text-align: center;
+
+
+    
+
 }
-.login,.register{
+
+.jumbotron{
+align-items: center;
+
+}
+.login .register{
 color:orange;
 }

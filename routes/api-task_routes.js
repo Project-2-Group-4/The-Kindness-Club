@@ -25,6 +25,21 @@ module.exports = function (app) {
   });
 
   // PUT route for updating task with userId
+  // app.put("/api/task", function (req, res) {
+  
+  //   db.Task.create({
+  //     PointsEarned: PointsEarned
+
+  //   })
+  //     .then( res.redirect("/api/task"))
+  //     .catch(err => console.log(err))
+    
+    
+  // });
+
+
+        
+
   app.put("/api/task", function (req, res) {
     db.Tasks.update(req.body,
       {
@@ -37,6 +52,8 @@ module.exports = function (app) {
       });
 
   });
+};
+
 
   //   app.get("/api/points", function (req, res) {
   //   db.Tasks.update(req.body,
@@ -50,7 +67,7 @@ module.exports = function (app) {
   //     });
   // });
 
-}
+
   
 
 

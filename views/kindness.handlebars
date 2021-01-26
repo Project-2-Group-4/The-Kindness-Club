@@ -2,8 +2,9 @@
 <link rel="stylesheet" href="/css/kind.css">
 
 <h2>Hello, {{User.FirstName}} {{User.LastName}}</h2>
- <div id="point-balance">Your point balance is {{task.PointsEarned}}</div>
- 
+
+ <div id="point-balance">YOUR POINT BALANCE IS: {{task.PointsEarned}}</div>
+  <h2 id="pts-bal"></h2>
 
 <img
   src="https://cdn.dribbble.com/users/2598141/screenshots/11467684/media/2509e16692dd873d6c40c799246bb47c.jpg?compress=1&resize=1600x1200"
@@ -14,7 +15,9 @@
 <div class="container">
   <div class="row-md-8 mt-4">
     <h2>TASK:</h2>
-    <h2 id="daily-task" class="pts"></h2>
+    <h2 id="daily-task"></h2>
+    <h2>POINT WORTH:</h2>
+    <h2 class="pts"></h2>
    
    
   </div>

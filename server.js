@@ -23,6 +23,7 @@ var PORT = process.env.PORT || 8080;
 
 // ===== Models ======
 const models = require("./models");
+const db = require('./models');
 
 // ===== Routes ======
 require("./routes/html-routes.js")(app);
@@ -39,3 +40,4 @@ models.sequelize.sync().then(function() {
 }).catch(function(err) {
     console.log(err, "Something went wrong when attempting to sync the database.");
 });
+
