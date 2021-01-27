@@ -13,10 +13,12 @@ module.exports = function (app) {
     });
   }
   );
+
   // PUT route for updating posts
   app.put("/api/user/:id", function (req, res) {
     db.User.update(req.body,
       {
+
         where: {
           id: req.params.id
         }
@@ -43,4 +45,4 @@ module.exports = function (app) {
                     
   //       });
   //   });
-};
+// };

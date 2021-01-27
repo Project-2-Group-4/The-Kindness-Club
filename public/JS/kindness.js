@@ -1,15 +1,8 @@
 
-// var ptBal=dbBadge[1].Points
-
-// const totalUserPoints = User.points + task.PointsEarned
-// UPDATE USER:
-// front end =>
-// //when the user clicks the complete button, there is an UPDATE to the USER table.
-// Find user => where id = User.id
-// data: { points: totalUserPoints }
 
 
 $(document).ready(function () {
+
   $.get("/api/task", function (task) {
     console.log("task", task);
     //  console.log("task", task.PointsEarned);
@@ -65,49 +58,7 @@ function updateScore(id) {
     })
 
 }
-
-// $("#complete").on("click", function () {
-
-// let btnPts = document.getElementById("complete").addEventListener("click", function () {
-//   $.get("/api/user", function (dbUser) {
-//     var ptsTotal = dbUser.Points
-//     console.log(dbUser[1].Points);
-//     // var newPoints = pointsContainer;
-//     // console.log(newPoints)
-   
-  //   $.ajax({
-  //     url: "/api/user",
-  //     method: "PUT",
-  //     data: ptsTotal
-     
-  //   }).then(function () {
-  //     window.location.reload()
-  //     ptsTotal
-     
-  //   })
-  // })
-
-// })
-
- 
-
-  // var pointScore = 0;
-  // var button = document.querySelector("#complete");
-  // //var pointsBalance = document.querySelector("#points-balance")
-
-  // button.addEventListener("click", function (e) {
-
-  //   pointScore++;
-  //   button.textContent = "Your points balance is:" + pointScore;
-
-  // });
-    
-
-
-// /
-
-
-
+});
 
 
   /* 
@@ -119,11 +70,38 @@ function updateScore(id) {
   user id and task id are written to table 
   every time user clicks button update user score with points earned 
   */
-
-
-
+  
+  
   //  // append points to page for user id logged in
   //  // this is keeping track of points and awarding them to the user id logged in
   //  //added default value of 100 in task.js for models
+
+
+
+
+
+// var ptBal=dbBadge[1].Points
+
+// const totalUserPoints = User.points + task.PointsEarned
+// UPDATE USER:
+// front end =>
+// //when the user clicks the complete button, there is an UPDATE to the USER table.
+// Find user => where id = User.id
+// data: { points: totalUserPoints }
+
+// Jess points code
+//   pointScore++;
+//   button.textContent = "Your points balance is:" + pointScore;
+// })
+//     var elTask = document.getElementById('daily-task')
+//     elTask.textContent = task.TaskName
+
+// task.onclick = function () {
+   
+//   var elPoints = document.getElementById('points')
+//   elPoints.textContent = "Worth:" + Tasks.pointsEarned
+//   // new task is shown in div by refreshing the page
+//   window.location.reload()
+
 
 

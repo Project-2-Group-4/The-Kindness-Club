@@ -32,6 +32,7 @@ module.exports = function (app) {
 
         });
     });
+
   // app.put("/api/user", function (req, res) {
   //   console.log("current",req.User.id);
      
@@ -51,22 +52,22 @@ module.exports = function (app) {
   //       console.log(dbUser);
   //       console.log("working");
 
-  //     });
-  // }
+  app.put("/api/user", function (req, res) {
+    console.log("current", req.user, req.body.points);
 
-
-
-app.put("/api/user", function (req, res) {
-    console.log("pointsofUSER",req.body)
-    db.User.update(req.body,
+    db.User.update({
+      Points: req.body.points
+    },
       {
         where: {
-          id: req.body.id
-        }
-      })
-      .then(function(dbUser) {
-        res.json(dbUser);
-      });
-  });
 
-}
+          id: req.user.id
+        }
+      }, function (dbUser) {
+        res.json(dbUser)
+        console.log(dbUser);
+        console.log("working");
+
+
+    });
+

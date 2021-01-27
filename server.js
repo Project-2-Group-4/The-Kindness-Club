@@ -4,7 +4,7 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const bodyParser = require('body-parser');
 var exphbs = require('express-handlebars');
-const env = require('dotenv').config({path:'./.env'});
+// const env = require('dotenv').config({path:'./.env'});
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -23,7 +23,6 @@ var PORT = process.env.PORT || 8080;
 
 // ===== Models ======
 const models = require("./models");
-const db = require('./models');
 
 // ===== Routes ======
 require("./routes/html-routes.js")(app);

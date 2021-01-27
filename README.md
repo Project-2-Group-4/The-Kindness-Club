@@ -2,7 +2,7 @@
 
 ## DESCRIPTION
 
-The-Kindness-Club-App is an application created with the goals of bringing people together while they are using the application and having fun.
+The-Kindness-Club-App is an application created with the goals of bringing people together while they are using the application and having fun. After the year 2020, we all need something good in our lives. With this application the purpose is to provide easy acts of kindness that can be added to the user's daily routine. With kindness, the world be a better place one day at a time.
 
 ## BUILT WITH
 
@@ -14,6 +14,16 @@ The-Kindness-Club-App is an application created with the goals of bringing peopl
   SEQUELIZE  [https://github.com/sequelize/sequelize/]
   NODE  [https://nodejs.org/es/download/]
   HANDLEBARS  [https://www.npmjs.com/package/handlebars]
+  
+ ## CREDITS
+ 
+ Kindness home page image ---- Defaced
+ https://dribbble.com/shots/11467684-Kindness
+ Rewards Page image ---- Milena Trifonova
+ https://dribbble.com/shots/14345244-Good-Karma-Points-Thank-You-Page-Illustration
+ 
+ Bootstrap
+ 
 
 ## SCREENSHOT  
 

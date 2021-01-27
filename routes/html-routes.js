@@ -42,9 +42,3 @@ module.exports = function (app) {
 
 };
 
-// const totalUserPoints = User.points + task.PointsEarned
-// UPDATE USER:
-// front end =>
-// //when the user clicks the complete button, there is an UPDATE to the USER table.
-// Find user => where id = User.id
-// data: { points: totalUserPoints }
