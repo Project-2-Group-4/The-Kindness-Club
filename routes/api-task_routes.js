@@ -22,53 +22,35 @@ module.exports = function (app) {
       });
   });
 
-  // PUT route for updating task with userId
-  // app.put("/api/task", function (req, res) {
-  
-  //   db.Task.create({
-  //     PointsEarned: PointsEarned
+    app.put("/api/task/:id", function (req, res) {
+      db.Tasks.update(req.body,
+        {
+          where: {
+           id: req.params.id
+          }
+        })
+        .then(function (dbTask) {
+          res.json(dbTask);
+        });
 
-  //   })
-  //     .then( res.redirect("/api/task"))
-  //     .catch(err => console.log(err))
-    
-    
-  // });
+    });
+  };
 
-
-        
-
-  app.put("/api/task", function (req, res) {
-    db.Tasks.update(req.body,
-      {
-        where: {
-          TasksId: req.body.TasksId
-        }
-      })
-      .then(function (dbTask) {
-        res.json(dbTask);
-      });
-
-  });
-};
-
-
-  //   app.get("/api/points", function (req, res) {
-  //   db.Tasks.update(req.body,
-  //     {
-  //       where: {
-  //         PointsEarned: req.body.PointsEarned
-  //       }
-  //     })
-  //     .then(function (task) {
-  //       res.json(task);
-  //     });
-  // });
-
+//   app.put("/api/task/:id", (req, res) =>
+//     db.post.update({
+//       title: req.body.title,
+//       content: req.body.content
+//     },
+//       {
+//         where: {
+//           id: req.params.id
+//         }
+//       }).then((result) => res.json(result))
+//   );
 
   
 
-
+// };
 
 
 

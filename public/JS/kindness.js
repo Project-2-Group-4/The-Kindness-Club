@@ -1,88 +1,78 @@
-$(document).ready(function () {
- $("#complete").on("click", function(){
-   var newPoints = {
-     points: 100
-   }
 
-   
-   $.ajax({
-     url: "/api/user", 
-     method: "PUT",
-     data: newPoints 
-     
-   }).then(function(){
-     window.location.reload()
-     newPoints 
-     
-   })
- })
+
+// const totalUserPoints = User.points + task.PointsEarned
+// UPDATE USER:
+// front end =>
+// //when the user clicks the complete button, there is an UPDATE to the USER table.
+// Find user => where id = User.id
+// data: { points: totalUserPoints }
+
+$(document).ready(function () {
  
   $.get("/api/task", function (task) {
     console.log("task", task);
-    //  console.log("task", task.PointsEarned);
+    $.get("/api/user", function (dbUser) {
+     (dbUser)
+            console.log("user",dbUser);
+
+      //  console.log("task", task.PointsEarned);
  
-    let pts = task.PointsEarned
-    let pointsContainer = Object.assign(pts)
-    var total = []
-    console.log(pts + pointsContainer)
-    var arr = [{ pts }, { pointsContainer }];
-    console.log(arr)
+      let pts = task.PointsEarned
+      let pointsContainer = Object.assign(pts)
+      var total = []
+      console.log(pts + pointsContainer)
+      var arr = [{ pts }, { pointsContainer }];
+      console.log(arr)
  
-    total.push({ arr },{ pointsContainer });
+      total.push({ arr }, { pointsContainer });
     
-   console.log(total)
+      console.log(total)
     
-    var elTask = document.querySelector('#daily-task')
-    elTask.textContent = task.TaskName 
-    var elPts=document.querySelector('.pts')
-    elPts.textContent = task.PointsEarned 
+      var elTask = document.querySelector('#daily-task')
+      elTask.textContent = task.TaskName
+      var elPts = document.querySelector('.pts')
+      elPts.textContent = task.PointsEarned
      
-    var ptsbalence=document.querySelector("#pts-bal")
-   ptsbalence.textContent = task.PointsEarned + pointsContainer
+      var ptsbalence = document.querySelector("#pts-bal")
+      ptsbalence.textContent = task.PointsEarned + pointsContainer
 
-  });
+    });
+  })
 })
-var pointScore = 0;
-var button = document.querySelector("#complete");
-//var pointsBalance = document.querySelector("#points-balance")
+function getUserPts(dbUser,id,) {
+console.log("newUser",dbUser);
+ 
+  $.ajax({
+    url: "/api/user/" + id,
+    method: "PUT",
+    body: JSON.stringify(dbUser)
+    // data: dataPts
+  })
+    .then(function (dbUser) {
+      console.log("dbDATA", dbUser)
+       
+ 
+    });
+  
 
-button.addEventListener("click", function (e) {
+}
+    
 
-  pointScore++;
-  button.textContent = "Your points balance is:" + pointScore;
-})
-    var elTask = document.getElementById('daily-task')
-    elTask.textContent = task.TaskName
-
-task.onclick = function () {
+    
+  
+// };
    
-  var elPoints = document.getElementById('points')
-  elPoints.textContent = "Worth:" + Tasks.pointsEarned
-  // new task is shown in div by refreshing the page
-  window.location.reload()
 
 
-   
+  // function updateScore(id) {
+  //   $.ajax({
+  //     url: "/api/user/" + id,
+  //     method: "PUT"
+  //   })
+  //     .then(function (dbdata) {
+  //       console.log("dbDATA", dbdata)
+  //     })
 
-  //     task.onclick = function 
-  //       // append points to page for user id logged in
-  //       // this is keeping track of points and awarding them to the user id logged in
-  //       //added default value of 100 in task.js for models
-  //       var elPoints = document.getElementById('points')
-  //       elPoints.textContent = "Worth:"+ Tasks.pointsEarned
-  //       // new task is shown in div by refreshing the page
-  //       window.location.reload()
+  // }
 
-
-
-
-
-  /* 
-  append task to page ---DONE
-  get random task to append too page --- DONE
-  get point value to append to page -- DONE
-  event handler to mark task complete to get points 
-  button clicked =points are earned and new task is populated on kindness page -- DONE
-  user id and task id are written to table 
-  every time user clicks button update user score with points earned 
-  */
+//   )
