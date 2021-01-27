@@ -1,15 +1,15 @@
 const express = require('express');
 const passport = require('passport');
 const flash = require('connect-flash');
-const session = require('express-session');
+const session = require('cookie-session');
 const bodyParser = require('body-parser');
 var exphbs = require('express-handlebars');
 // const env = require('dotenv').config({path:'./.env'});
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json()); 
-app.use(session({ secret: 'nw bootcamp', resave: true, saveUninitialized:true}));
+app.use(bodyParser.json());
+app.use(session({ secret: 'nw bootcamp', resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(flash());
 app.use(passport.session());
@@ -19,6 +19,7 @@ app.use(express.static(__dirname + '/public'));
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
+//Set the port for heroku
 var PORT = process.env.PORT || 8080;
 
 // ===== Models ======
@@ -31,12 +32,12 @@ require('./routes/api-task_routes.js')(app);
 require('./routes/api-badge_routes.js')(app);
 require('./routes/api_signin_routes.js')(app);
 require('./config/passport/passport-config.js')(passport, models.User);
- 
-models.sequelize.sync().then(function() {
-    app.listen(PORT, function() {
+
+models.sequelize.sync().then(function () {
+  app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);
   });
-}).catch(function(err) {
-    console.log(err, "Something went wrong when attempting to sync the database.");
+}).catch(function (err) {
+  console.log(err, "Something went wrong when attempting to sync the database.");
 });
 

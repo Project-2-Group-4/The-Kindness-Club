@@ -16,7 +16,7 @@ $(document).ready(function () {
      
    })
  })
- 
+
   $.get("/api/task", function (task) {
     console.log("task", task);
     //  console.log("task", task.PointsEarned);

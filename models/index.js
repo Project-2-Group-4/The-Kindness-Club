@@ -14,7 +14,9 @@ sequelize.authenticate()
     .then(() => console.log("database connected.."))
     .catch(err => console.log("error:" + err))
  
-fs.readdirSync(__dirname).filter(function(file) {
+fs
+.readdirSync(__dirname)
+.filter(function(file) {
     return (file.indexOf(".") !== 0) && (file !== "index.js");
 }).forEach(function(file) {
         var model = sequelize["import"](path.join(__dirname, file));
