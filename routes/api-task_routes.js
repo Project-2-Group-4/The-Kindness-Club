@@ -5,8 +5,6 @@ var db = require("../models");
 
 
 module.exports = function (app) {
-
-
   function getRandomIntInclusive(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);

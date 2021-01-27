@@ -13,11 +13,7 @@ module.exports = function (app) {
     });
   }
   );
-
-
-
-
-
+  
   app.get("/api/reward/:",
     function (req, res) {
       db.Badge.findOne({
