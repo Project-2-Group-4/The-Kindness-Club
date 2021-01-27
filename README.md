@@ -4,6 +4,12 @@
 
 The-Kindness-Club-App is an application created with the goals of bringing people together while they are using the application and having fun.
 
+## Distribution of work
+
+handlebars/ css / Front JS -- Jessica 
+heroku deployment and backend -- Fabian
+backend -- Patrick
+Handlebars/ Front JS -- Lauren
 ## BUILT WITH
 
   HTML  
