@@ -33,20 +33,17 @@ module.exports = function (app) {
         });
     });
   app.put("/api/user", function (req, res) {
-    console.log("current",req.user, req.body.points);
-     
-    db.User.update(
-      
-    {
+    console.log("current", req.user, req.body.points);
+
+    db.User.update({
       Points: req.body.points
     },
       {
+        where: {
 
-      where: {
-
-        id: req.user.id
-      }
-    },function (dbUser) {
+          id: req.user.id
+        }
+      }, function (dbUser) {
         res.json(dbUser)
         console.log(dbUser);
         console.log("working");
@@ -57,4 +54,16 @@ module.exports = function (app) {
 }
 
 
-
+/*
+  app.put("/api/user", function(req, res) {
+    db..update(req.body,
+      {
+        where: {
+          id: req.body.id
+        }
+      })
+      .then(function(dbPost) {
+        res.json(dbPost);
+      });
+  });
+*/

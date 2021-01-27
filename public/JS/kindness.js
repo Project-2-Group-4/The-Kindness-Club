@@ -1,12 +1,4 @@
-
-// var ptBal=dbBadge[1].Points
-
-
-
-
 $(document).ready(function () {
-
-
  $("#complete").on("click", function(){
    var newPoints = {
      points: 100
@@ -58,23 +50,14 @@ button.addEventListener("click", function (e) {
 
   pointScore++;
   button.textContent = "Your points balance is:" + pointScore;
-
-  
 })
-
-
-
     var elTask = document.getElementById('daily-task')
     elTask.textContent = task.TaskName
 
-   
-
 task.onclick = function () {
-
-      
+   
   var elPoints = document.getElementById('points')
   elPoints.textContent = "Worth:" + Tasks.pointsEarned
-
   // new task is shown in div by refreshing the page
   window.location.reload()
 
@@ -103,23 +86,3 @@ task.onclick = function () {
   user id and task id are written to table 
   every time user clicks button update user score with points earned 
   */
-
-
-
-  //  //mark task as completed in the db
-  //  // if(task) {
-  //  //    'complete' === clicked
-  //  // }.then{(
-
-  //  //    //completed  ===  true
-  //  //    //award points to user id
-
-  //  // )}
-
-
-  //  // append points to page for user id logged in
-  //  // this is keeping track of points and awarding them to the user id logged in
-  //  //added default value of 100 in task.js for models
-
-
-}
