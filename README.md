@@ -25,7 +25,8 @@ The-Kindness-Club-App is an application created with the goals of bringing peopl
  Bootstrap
  
 
-## SCREENSHOT  
+## SCREENSHOT 
+<img width="1440" alt="Screen Shot 2021-01-27 at 1 06 48 PM" src="https://user-images.githubusercontent.com/68556793/106040908-b7d2a000-60a0-11eb-9f6e-53f7e7c14faf.png">
 
 ## LINK TO DEPLOY APPLICATION  
 
