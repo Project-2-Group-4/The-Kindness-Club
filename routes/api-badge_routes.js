@@ -3,7 +3,7 @@ var db = require("../models");
 
 module.exports = function (app) {
   // Get route for returning kind tasks and points 
-  app.get("/api/reward", function (req, res) {
+  app.get("/api/user", function (req, res) {
  
     db.User.findAll({
      
@@ -13,24 +13,34 @@ module.exports = function (app) {
     });
   }
   );
-
-
-
-
-
-  app.get("/api/reward/:",
-    function (req, res) {
-      db.Badge.findOne({
+  // PUT route for updating posts
+  app.put("/api/user/:id", function (req, res) {
+    db.User.update(req.body,
+      {
         where: {
-          id: req.params.Badge
-        },
-        // include: [db.User]
+          id: req.params.id
+        }
       })
-        .then(function (dbBadge) {
-          res.json(dbBadge)
-          console.log(dbBadge);
-          console.log("working");
+      .then(function (dbUser) {
+        res.json(dbUser);
+        console.log("userpts", dbUser)
+        console.log(req.body.Points)
+      });
+  });
+
+  // app.get("/api/reward/:",
+  //   function (req, res) {
+  //     db.User.findOne({
+  //       where: {
+  //         id: req.params.Badge
+  //       },
+  //       // include: [db.User]
+  //     })
+  //       .then(function (dbBadge) {
+  //         res.json(dbBadge)
+  //         console.log(dbBadge);
+  //         console.log("working");
                     
-        });
-    });
-}
+  //       });
+  //   });
+};

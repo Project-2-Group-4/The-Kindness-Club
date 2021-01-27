@@ -41,16 +41,17 @@ module.exports = function (app) {
         
 
   app.put("/api/task", function (req, res) {
-    db.Tasks.update(req.body,
+    db.User.update(req.body,
       {
         where: {
-          TasksId: req.body.TasksId
+        Userid: req.body.Points
         }
       })
-      .then(function (dbTask) {
-        res.json(dbTask);
+      .then(function (dbpts) {
+        res.json(dbpts);
+           console.log(dbpts)
       });
-
+   
   });
 };
 

@@ -25,12 +25,14 @@ module.exports = function (app) {
     });
 
     app.get("/kind", function (req, res) {
+          console.log("user",req.user)
         if (typeof req.user === 'undefined') {
             res.redirect("/signin");
         }
         res.render("kindness", 
             {User: req.user
             }
+          
         );
     });
 
@@ -39,3 +41,10 @@ module.exports = function (app) {
     });
 
 };
+
+// const totalUserPoints = User.points + task.PointsEarned
+// UPDATE USER:
+// front end =>
+// //when the user clicks the complete button, there is an UPDATE to the USER table.
+// Find user => where id = User.id
+// data: { points: totalUserPoints }

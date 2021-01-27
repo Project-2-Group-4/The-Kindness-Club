@@ -32,29 +32,41 @@ module.exports = function (app) {
 
         });
     });
-  app.put("/api/user", function (req, res) {
-    console.log("current",req.user, req.body.points);
+  // app.put("/api/user", function (req, res) {
+  //   console.log("current",req.User.id);
      
-    db.User.update(
-      
-    {
-      Points: req.body.points
-    },
+  //   db.User.update(
+  //     {
+  //   // {
+  //   //  id: req.body.points
+  //   // },
+  //   //   {
+
+  //     where: {
+
+  //       id: req.User.id
+  //     }
+  //   },function (dbUser) {
+  //       res.json(dbUser)
+  //       console.log(dbUser);
+  //       console.log("working");
+
+  //     });
+  // }
+
+
+
+app.put("/api/user", function (req, res) {
+    console.log("pointsofUSER",req.body)
+    db.User.update(req.body,
       {
-
-      where: {
-
-        id: req.user.id
-      }
-    },function (dbUser) {
-        res.json(dbUser)
-        console.log(dbUser);
-        console.log("working");
-
+        where: {
+          id: req.body.id
+        }
+      })
+      .then(function(dbUser) {
+        res.json(dbUser);
       });
-  })
+  });
 
 }
-
-
-
