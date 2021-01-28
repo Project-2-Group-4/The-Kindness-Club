@@ -4,6 +4,12 @@
 
 The-Kindness-Club-App is an application created with the goals of bringing people together while they are using the application and having fun. After the year 2020, we all need something good in our lives. With this application the purpose is to provide easy acts of kindness that can be added to the user's daily routine. With kindness, the world be a better place one day at a time.
 
+## Distribution of work
+
+handlebars/ css / Front JS -- Jessica 
+heroku deployment and backend -- Fabian
+backend -- Patrick
+Handlebars/ Front JS -- Lauren
 ## BUILT WITH
 
   HTML  
