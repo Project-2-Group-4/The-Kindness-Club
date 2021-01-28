@@ -2,6 +2,7 @@ const express = require('express');
 const passport = require('passport');
 const flash = require('connect-flash');
 const session = require('express-session');
+const favicon = require('express-favicon');
 const bodyParser = require('body-parser');
 var exphbs = require('express-handlebars');
 // const env = require('dotenv').config({path:'./.env'});
@@ -14,6 +15,7 @@ app.use(passport.initialize());
 app.use(flash());
 app.use(passport.session());
 app.use(express.static(__dirname + '/public'));
+app.use(favicon(__dirname + '/public/favicon.png'));
 
 //Set the templating engine for views as handlebars!
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
