@@ -2,6 +2,7 @@ $(document).ready(function () {
   
   var userPoints;
   var taskPoints;
+
   generateTask(); 
 
   function populateTaskFields(name, points){
@@ -9,6 +10,7 @@ $(document).ready(function () {
     $("#point-worth").html(points);
   }
   function generateTask(){
+
     $.get("/api/user", function(data) {
       userPoints = data.Points;
       $("#user-total-points").html(userPoints);
@@ -19,10 +21,9 @@ $(document).ready(function () {
     });
   }
   $("#complete").on("click", function(){
-    /*$.get("/api/user", function(data) {
+    $.get("/api/user", function(data) {
       userPoints = data.Points;
-    });*/
-
+    });
     let newTotal = userPoints + taskPoints;
     let newData = {Points: newTotal};
     $.ajax({
@@ -30,11 +31,11 @@ $(document).ready(function () {
       url: "/api/user",
       data: newData
     });
-    //$("#user-total-points").html(userPoints);
+    $("#user-total-points").html(userPoints);
     generateTask();
   });
-
 });
+
   /*
   /*
     function updatePoints(points) {
