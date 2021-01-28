@@ -10,7 +10,7 @@ module.exports = function(sequelize, DataTypes) {
             defaultValue: 100,
             allowNull: false
         }
-        // PointsBalence: {
+        // PointsBalance: {
         //     type:DataTypes.INTEGER,
         // }
     });

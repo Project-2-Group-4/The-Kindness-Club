@@ -1,25 +1,32 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
-h1,h2{
+h1,h2,h3,h4,h5,h6{
 font-family: 'Roboto', sans-serif;
 }
-#pts-bal{
-    padding-left: 25px;
-    font-weight: bolder;
-}
 img{
-background-color:#ffe8a9;
- width:50em;
- height:35em;
- margin-left:20em 
+ background-color:#ffe8a9;
+ margin:0 auto;
+ height:220px;
+ margin-bottom:1rem;
 }
 body{
     background-color:#ffe8a9;
 }
-.container{
-    background-color:white;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    text-align: center;
-    border:2px solid black;
+.main-container{
+    text-align:center;
+    padding:2rem;
 }
+.task-container{
+    background-color:white;
+    padding:1.4rem;
+    border:1px solid #888;
+}
+.task-name{
+    font-size:1.3rem;
+}
+#point-balance{
+    background-color:#ebd28d;
+    font-size:1.3rem;
+    padding:0.5rem;
+}
+#user-total-points{color:green;}

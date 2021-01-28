@@ -56,7 +56,7 @@ module.exports = function (app) {
 
 /*
   app.put("/api/user", function(req, res) {
-    db..update(req.body,
+    db.User.update(req.body,
       {
         where: {
           id: req.body.id
