@@ -4,20 +4,20 @@
 
 
 
-$.get("/api/reward", function (dbBadge) {
+// $.get("/api/reward", function (dbBadge) {
   
-    nelsonPts = document.getElementById('nelson').addEventListener("click", function () {
-  console.log( dbBadge[1].Points);
+//     nelsonPts = document.getElementById('nelson').addEventListener("click", function () {
+//   console.log( dbBadge[1].Points);
 
-        let pointContainer = {}
+//         let pointContainer = {}
         
     
-        // deducting -2000 points from user User table "Points"
-        // adding badge to user.Id in the User table
+//         // deducting -2000 points from user User table "Points"
+//         // adding badge to user.Id in the User table
 
 
 
-    })
-})
+//     })
+// })
 
 
