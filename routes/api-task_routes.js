@@ -3,7 +3,6 @@
 // const { sequelize } = require("../models");
 var db = require("../models");
 
-
 module.exports = function (app) {
   function getRandomIntInclusive(min, max) {
     min = Math.ceil(min);
@@ -11,8 +10,6 @@ module.exports = function (app) {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
   app.get("/api/task", function (req, res) {
-
-
     db.Task.findAll({})
       .then(function (tasks) {
         console.log("tasks", tasks.length)
@@ -21,6 +18,30 @@ module.exports = function (app) {
         res.json(randomTask)
       });
   });
+
+  app.get("/api/user", function(req, res){
+    db.User.findOne({
+      where: {
+        id: req.user.id
+      }
+    }).then(function(user) {
+      res.json(user);
+    });
+  })
+
+  app.put("/api/user", function(req, res) {
+    db.User.update(req.body,
+      {
+        where: {
+          id: req.user.id
+        }
+      })
+      .then(function(p) {
+        res.json(p);
+      });
+  });
+};
+
 
   // PUT route for updating task with userId
   // app.put("/api/task", function (req, res) {
@@ -34,23 +55,6 @@ module.exports = function (app) {
     
     
   // });
-
-
-        
-
-  app.put("/api/task", function (req, res) {
-    db.Tasks.update(req.body,
-      {
-        where: {
-          TasksId: req.body.TasksId
-        }
-      })
-      .then(function (dbTask) {
-        res.json(dbTask);
-      });
-
-  });
-};
 
 
   //   app.get("/api/points", function (req, res) {

@@ -2,40 +2,20 @@
 <link rel="stylesheet" href="/css/kind.css">
 
 <h2>Hello, {{User.FirstName}} {{User.LastName}}</h2>
-
- <div id="point-balance">YOUR POINT BALANCE IS: {{task.Points}}</div>
-  <h2 id="pts-bal"></h2>
+<div id="point-balance">Your point balance is: <b><span id="user-total-points">{{User.Points}}</b></span></div>
 
 <img
   src="https://cdn.dribbble.com/users/2598141/screenshots/11467684/media/2509e16692dd873d6c40c799246bb47c.jpg?compress=1&resize=1600x1200"
   alt="kindnessimg">
 
+  <div class="task-container">
+    <p class="task-name"><b>Task</b>: <span id="daily-task"></span></p>
+    <p><b>Worth:</b> <span id="point-worth"></span> points</p>
 
-
-<div class="container">
-  <div class="row-md-8 mt-4">
-    <h2>TASK:</h2>
-    <h2 id="daily-task"></h2>
-    <h2>POINT WORTH:</h2>
-    <h2 class="pts"></h2>
-   
-   
-  </div>
-
-  <button id="complete" onclick="window.location.reload()">I DID THIS!</button>
-  <div class="row-md-8 mt-4">
-
-    <h3>WORTH:100</h3>
- 
-    
-
-    <h3 id= "points"></h3>
-
+    <button id="complete">I did this!</button>
   </div>
 
 
 </div>
-
-
 
 <script src="/JS/kindness.js"></script>

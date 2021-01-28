@@ -14,7 +14,7 @@ module.exports = function(sequelize, DataTypes) {
         },
         Points:{
             type: DataTypes.INTEGER,
-            // defaultValue: 0
+            defaultValue: 100
         },
         Email: {
             type: DataTypes.STRING,

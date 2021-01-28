@@ -1,22 +1,54 @@
 $(document).ready(function () {
- $("#complete").on("click", function(){
-   var newPoints = {
-     points: 100
-   }
+  
+  var userPoints;
+  var taskPoints;
+  generateTask(); 
 
-   
-   $.ajax({
-     url: "/api/user", 
-     method: "PUT",
-     data: newPoints 
-     
-   }).then(function(){
-     window.location.reload()
-     newPoints 
-     
-   })
- })
- 
+  function populateTaskFields(name, points){
+    $("#daily-task").html(name);
+    $("#point-worth").html(points);
+  }
+  function generateTask(){
+    $.get("/api/user", function(data) {
+      userPoints = data.Points;
+      $("#user-total-points").html(userPoints);
+    });
+    $.get("/api/task", function(task) {
+      taskPoints = task.PointsEarned;
+      populateTaskFields(task.TaskName, task.PointsEarned);
+    });
+  }
+  $("#complete").on("click", function(){
+    /*$.get("/api/user", function(data) {
+      userPoints = data.Points;
+    });*/
+
+    let newTotal = userPoints + taskPoints;
+    let newData = {Points: newTotal};
+    $.ajax({
+      method: "PUT",
+      url: "/api/user",
+      data: newData
+    });
+    //$("#user-total-points").html(userPoints);
+    generateTask();
+  });
+
+});
+  /*
+  /*
+    function updatePoints(points) {
+      $.ajax({
+        method: "PUT",
+        url: "/api/posts",
+        data: points
+      })
+        .then(function() {
+          window.location.reload();
+        });
+    }
+        updatePoints(newPoints);
+  
   $.get("/api/task", function (task) {
     console.log("task", task);
     //  console.log("task", task.PointsEarned);
@@ -38,9 +70,7 @@ $(document).ready(function () {
     elPts.textContent = task.PointsEarned 
      
     var ptsbalence=document.querySelector("#pts-bal")
-   ptsbalence.textContent = task.PointsEarned + pointsContainer
-
-  });
+   ptsbalence.textContent = task.PointsEarned + pointsContainer;
 })
 var pointScore = 0;
 var button = document.querySelector("#complete");
@@ -61,7 +91,7 @@ task.onclick = function () {
   // new task is shown in div by refreshing the page
   window.location.reload()
 
-
+}
    
 
   //     task.onclick = function 
@@ -75,9 +105,6 @@ task.onclick = function () {
 
 
 
-
-
-  /* 
   append task to page ---DONE
   get random task to append too page --- DONE
   get point value to append to page -- DONE
@@ -85,4 +112,4 @@ task.onclick = function () {
   button clicked =points are earned and new task is populated on kindness page -- DONE
   user id and task id are written to table 
   every time user clicks button update user score with points earned 
-  */
+*/

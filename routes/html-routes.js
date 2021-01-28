@@ -19,7 +19,7 @@ module.exports = function (app) {
     app.get("/register", function (req, res) {
         // If the user already has an account send them to the login page
         if (req.user) {
-            res.redirect("/register");
+            res.redirect("/kind");
         }
         res.render("register", {error: req.flash('error')});
     });
@@ -28,9 +28,7 @@ module.exports = function (app) {
         if (typeof req.user === 'undefined') {
             res.redirect("/signin");
         }
-        res.render("kindness", 
-            {User: req.user
-            }
+        res.render("kindness", {User: req.user}
         );
     });
 
