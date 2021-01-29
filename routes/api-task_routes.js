@@ -1,6 +1,4 @@
-// const { brotliDecompress } = require("zlib");
 
-// const { sequelize } = require("../models");
 var db = require("../models");
 
 module.exports = function (app) {

@@ -17,7 +17,7 @@ app.use(passport.session());
 app.use(express.static(__dirname + '/public'));
 app.use(favicon(__dirname + '/public/favicon.png'));
 
-var session = require('express-session')
+// var session = require('express-session')
 var MemoryStore = require('memorystore')(session)
  
 app.use(session({
