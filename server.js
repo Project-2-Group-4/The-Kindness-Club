@@ -10,7 +10,6 @@ var exphbs = require('express-handlebars');
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json()); 
-app.use(session({ secret: 'nw bootcamp', resave: true, saveUninitialized:true}));
 app.use(passport.initialize());
 app.use(flash());
 app.use(passport.session());
