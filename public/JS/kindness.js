@@ -13,6 +13,7 @@ $(document).ready(function () {
 
     $.get("/api/user", function(data) {
       userPoints = data.Points;
+      console.log("get(api/user):", userPoints);
       $("#user-total-points").html(userPoints);
     });
     $.get("/api/task", function(task) {
@@ -24,6 +25,7 @@ $(document).ready(function () {
     $.get("/api/user", function(data) {
       userPoints = data.Points;
     });
+    console.log("click:", userPoints);
     let newTotal = userPoints + taskPoints;
     let newData = {Points: newTotal};
     $.ajax({
