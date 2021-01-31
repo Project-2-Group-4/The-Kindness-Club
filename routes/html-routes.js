@@ -25,11 +25,11 @@ module.exports = function (app) {
     });
 
     app.get("/kind", function (req, res) {
-        if (typeof req.user === 'undefined') {
+        if (req.user) {
+            res.render("kindness", {User: req.user});
+        }else{
             res.redirect("/signin");
         }
-        res.render("kindness", {User: req.user}
-        );
     });
 
     app.get("/reward", function (req, res) {
