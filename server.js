@@ -10,17 +10,12 @@ var exphbs = require('express-handlebars');
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json()); 
+app.use(session({ secret: 'nw bootcamp', resave: true, saveUninitialized:true}));
 app.use(passport.initialize());
 app.use(flash());
 app.use(passport.session());
 app.use(express.static(__dirname + '/public'));
 app.use(favicon(__dirname + '/public/favicon.png'));
-
-app.use(session({
-    cookie: { maxAge: 86400000 },
-    resave: false,
-    secret: 'keyboard cat'
-}))
 
 //Set the templating engine for views as handlebars!
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
