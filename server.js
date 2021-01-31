@@ -16,14 +16,8 @@ app.use(passport.session());
 app.use(express.static(__dirname + '/public'));
 app.use(favicon(__dirname + '/public/favicon.png'));
 
-// var session = require('express-session')
-var MemoryStore = require('memorystore')(session)
- 
 app.use(session({
     cookie: { maxAge: 86400000 },
-    store: new MemoryStore({
-      checkPeriod: 86400000 // prune expired entries every 24h
-    }),
     resave: false,
     secret: 'keyboard cat'
 }))
