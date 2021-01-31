@@ -31,9 +31,13 @@
     "express-handlebars": "^5.2.0",
     "express-session": "^1.17.1",
     "i": "^0.3.6",
+    "memorystore": "^1.6.4",
     "mysql2": "^2.2.5",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "sequelize": "^5.8.6"
+  },
+  "engines": {
+    "node": "10.16.0"
   }
 }
