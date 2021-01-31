@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  
+   
   var userPoints;
   var taskPoints;
 
